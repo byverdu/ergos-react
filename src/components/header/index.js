@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Title from './title';
+import Logo from './logo';
 
-class Header extends Component {
+export default class Header extends Component {
   render() {
     return (
       <header>
+        <Logo />
         <Title name="Residència Ergos" />
       </header>
     )
   }
 }
-
-export default Header;
