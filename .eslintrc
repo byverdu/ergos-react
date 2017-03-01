@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "extends": "react-app",
+  "rules": {
+    "comma-dangle": [2, "never"],
+    "space-in-parens": [2, "always", { "exceptions": ["()","{}","[]"] } ],
+    "computed-property-spacing": [2, "always"],
+    "array-bracket-spacing": [2, "always"],
+    "no-param-reassign": 0,
+    "max-len": 0,
+    "linebreak-style": 0,
+    "import/no-extraneous-dependencies": 0
+  }
+}
