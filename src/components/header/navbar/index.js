@@ -8,9 +8,8 @@ export default class NavBar extends Component {
       {href: 'http://sport.es', text: 'Sport'}
     ];
     return linksList.map(( item, index ) => (
-      <li>
+      <li key={index}>
         <Link
-          key={index}
           linkHref={item.href}
           linkText={item.text}
         />
