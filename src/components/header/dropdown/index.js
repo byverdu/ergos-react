@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Option from './option';
 
 export default class Dropdown extends Component {
   constructor( props ) {
@@ -7,20 +6,6 @@ export default class Dropdown extends Component {
     this.state = { value: 'cat' };
 
     this.handleChange = this.handleChange.bind( this );
-  }
-  getOptions() {
-    const options = [
-      { value: 'es', text: 'Castellano' },
-      { value: 'cat', text: 'Català' }
-    ];
-
-    return options.map(( opt, index ) => (
-       <Option
-          key={ index }
-          optsValue={ opt.value }
-          optsText={ opt.text }
-        />
-    ));
   }
 
   handleChange( event ) {
@@ -34,7 +19,7 @@ export default class Dropdown extends Component {
         value={this.state.value}
         onChange={ this.handleChange }
       >
-        { this.getOptions() }
+        { this.props.optionsList }
       </select>
     );
   }

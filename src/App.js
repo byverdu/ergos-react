@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Header from './components/header';
 import './App.css';
 
 class App extends Component {
+  constructor( props ) {
+    super( props )
+
+    this.state = {
+      header: {
+        title: 'Residencia Ergos',
+        altImg: 'logo residencia ergos',
+        linksList: [
+          {href: 'http://google.es', text: 'Google'},
+          {href: 'http://sport.es', text: 'Sport'},
+          {href: 'http://marca.es', text: 'Marca'}
+        ],
+        optionsList: [
+          { value: 'es', text: 'Castellano' },
+          { value: 'cat', text: 'Català' }
+        ]
+      }
+    };
+  }
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Header />
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Header data={this.state.header}/>
       </div>
     );
   }

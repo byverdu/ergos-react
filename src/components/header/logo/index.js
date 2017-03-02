@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
 
-class Logo extends Component {
+export default class Logo extends Component {
   render() {
     return (
-      <img src={logo} alt="logo residencia ergos" />
+      <img src={ this.props.srcImg } alt={ this.props.altImg } />
     )
   }
 }
-
-export default Logo;
