@@ -11,16 +11,23 @@ export default class Header extends Component {
     super( props )
     this.state = props.data;
     console.log(this.state);
+
+    this.handleChange = this.handleChange.bind( this );
+  }
+
+  handleChange( event ) {
+    console.log( event );
+    this.setState({ value: event.target.value });
   }
 
   render() {
-    const { title, altImg, linksList, optionsList } = this.state;
+    const { title, altImg, linksList, optionsList, selectedOption } = this.state;
     return (
       <header>
         <Logo srcImg={ logo } altImg={ altImg } />
         <Title title={ title }/>
         <NavBar linksList={ headerUtils.getLinks( linksList ) } />
-        <Dropdown optionsList={ headerUtils.getOptions( optionsList ) } />
+        <Dropdown optionsList={ headerUtils.getOptions( optionsList ) } propValue={ selectedOption.value } propHandleChange={ this.handleChange } />
       </header>
     )
   }

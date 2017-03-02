@@ -18,7 +18,10 @@ class App extends Component {
         optionsList: [
           { value: 'es', text: 'Castellano' },
           { value: 'cat', text: 'Català' }
-        ]
+        ],
+        selectedOption: {
+          value: 'cat'
+        }
       }
     };
   }
