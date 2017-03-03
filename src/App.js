@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Header from './components/header';
 import './App.css';
+import axios from 'axios';
 
-class App extends Component {
+export default class App extends Component {
+  constructor( props ) {
+    super( props )
+
+    this.state = {
+      header: {}
+    };
+  }
+
+  componentDidMount() {
+    axios.get(  './json/index.json' )
+      .then(  res => {
+        console.log( res.data );
+        const responseData = {
+          header: res.data.header
+        };
+
+      this.setState( responseData );
+    });
+  }
+
   render() {
+    if( !this.state.header.title ) {
+    return ( <div>Loading</div> );
+  }
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Header data={this.state.header}/>
       </div>
     );
   }
 }
-
-export default App;
