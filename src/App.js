@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header';
+import Loading from './components/subComponents/loading';
 import './App.css';
 import axios from 'axios';
 
@@ -25,12 +26,17 @@ export default class App extends Component {
   }
 
   render() {
+    const { header } = this.state;
     if( !this.state.header.title ) {
-    return ( <div>Loading</div> );
-  }
+      return (
+        <div>
+          <Loading />
+        </div>
+      );
+    }
     return (
       <div>
-        <Header data={this.state.header}/>
+        <Header data={ header }/>
       </div>
     );
   }
