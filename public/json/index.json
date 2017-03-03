@@ -14,5 +14,12 @@
     "selectedOption": {
       "value": "cat"
     }
+  },
+  "footer": {
+    "listItems": [
+      {"text": "C/ Pomaret 25, Barcelona"},
+      {"text": "C.P 08017"},
+      {"text": "+34 934 174 187"}
+    ]
   }
 }

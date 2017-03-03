@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header';
+import Footer from './components/footer';
 import Loading from './components/subComponents/loading';
 import './App.css';
 import axios from 'axios';
@@ -9,7 +10,8 @@ export default class App extends Component {
     super( props )
 
     this.state = {
-      header: {}
+      header: {},
+      footer: {}
     };
   }
 
@@ -18,7 +20,8 @@ export default class App extends Component {
       .then(  res => {
         console.log( res.data );
         const responseData = {
-          header: res.data.header
+          header: res.data.header,
+          footer: res.data.footer
         };
 
       this.setState( responseData );
@@ -26,7 +29,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { header } = this.state;
+    const { header, footer } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -37,6 +40,7 @@ export default class App extends Component {
     return (
       <div>
         <Header data={ header }/>
+        <Footer data={ footer }/>
       </div>
     );
   }

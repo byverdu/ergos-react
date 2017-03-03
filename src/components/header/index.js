@@ -4,7 +4,7 @@ import Logo from './logo';
 import NavBar from './navbar';
 import Dropdown from './dropdown';
 import logo from '../media/logo.png';
-import * as headerUtils from '../utils/header';
+import { getHeaderLinks, getHeaderOptions } from '../utils/';
 
 export default class Header extends Component {
   constructor( props ) {
@@ -26,8 +26,8 @@ export default class Header extends Component {
       <header>
         <Logo srcImg={ logo } altImg={ altImg } />
         <Title title={ title }/>
-        <NavBar linksList={ headerUtils.getLinks( linksList ) } />
-        <Dropdown optionsList={ headerUtils.getOptions( optionsList ) } propValue={ selectedOption.value } propHandleChange={ this.handleChange } />
+        <NavBar linksList={ getHeaderLinks( linksList ) } />
+        <Dropdown optionsList={ getHeaderOptions( optionsList ) } propValue={ selectedOption.value } propHandleChange={ this.handleChange } />
       </header>
     )
   }
