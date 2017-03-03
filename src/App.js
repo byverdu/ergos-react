@@ -1,31 +1,33 @@
 import React, { Component } from 'react';
 import Header from './components/header';
 import './App.css';
+import axios from 'axios';
 
-class App extends Component {
+export default class App extends Component {
   constructor( props ) {
     super( props )
 
     this.state = {
-      header: {
-        title: 'Residencia Ergos',
-        altImg: 'logo residencia ergos',
-        linksList: [
-          {href: 'http://google.es', text: 'Google'},
-          {href: 'http://sport.es', text: 'Sport'},
-          {href: 'http://marca.es', text: 'Marca'}
-        ],
-        optionsList: [
-          { value: 'es', text: 'Castellano' },
-          { value: 'cat', text: 'Català' }
-        ],
-        selectedOption: {
-          value: 'cat'
-        }
-      }
+      header: {}
     };
   }
+
+  componentDidMount() {
+    axios.get(  './json/index.json' )
+      .then(  res => {
+        console.log( res.data );
+        const responseData = {
+          header: res.data.header
+        };
+
+      this.setState( responseData );
+    });
+  }
+
   render() {
+    if( !this.state.header.title ) {
+    return ( <div>Loading</div> );
+  }
     return (
       <div>
         <Header data={this.state.header}/>
@@ -33,5 +35,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
