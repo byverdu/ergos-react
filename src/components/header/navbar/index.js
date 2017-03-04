@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class NavBar extends Component {
   render() {
@@ -11,4 +11,8 @@ export default class NavBar extends Component {
       </nav>
     );
   }
+}
+
+NavBar.propTypes = {
+  linksList: PropTypes.array.isRequired
 }

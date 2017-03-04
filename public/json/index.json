@@ -14,5 +14,13 @@
     "selectedOption": {
       "value": "cat"
     }
+  },
+  "footer": {
+    "listItems": [
+      {"iconType": "address","text": "C/ Pomaret 25, Barcelona"},
+      {"iconType": "mail","text": "C.P 08017"},
+      {"iconType": "phone","text": "+34 934 174 187"}
+    ],
+    "textButton": "Info Legal"
   }
 }
