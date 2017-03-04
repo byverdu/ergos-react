@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export default class Dropdown extends Component {
   render() {
@@ -12,4 +12,10 @@ export default class Dropdown extends Component {
       </select>
     );
   }
+}
+
+Dropdown.propTypes = {
+  propValue: PropTypes.string.isRequired,
+  optionsList: PropTypes.array.isRequired,
+  propHandleChange: PropTypes.func.isRequired
 }
