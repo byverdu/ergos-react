@@ -5,6 +5,7 @@ import Loading from './components/subComponents/loading';
 import './App.css';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
+import ReactHtmlParser from 'react-html-parser';
 
 export default class App extends Component {
   constructor( props ) {
@@ -12,6 +13,7 @@ export default class App extends Component {
 
     this.state = {
       header: {},
+      content: {},
       footer: {}
     };
   }
@@ -22,6 +24,7 @@ export default class App extends Component {
         console.log( res.data );
         const responseData = {
           header: res.data.header,
+          content: res.data.content,
           footer: res.data.footer
         };
 
@@ -30,7 +33,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { header, footer } = this.state;
+    const { header, content, footer } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -45,11 +48,16 @@ export default class App extends Component {
             <Header data={ header } />
           </Col>
         </Row>
-          <Row>
-            <Col xs="12">
-              <Footer data={ footer }/>
-            </Col>
-          </Row>
+        <Row>
+          <Col xs="12">
+            { ReactHtmlParser( content.index ) }
+          </Col>
+        </Row>
+        <Row>
+          <Col xs="12">
+            <Footer data={ footer }/>
+          </Col>
+        </Row>
       </Container>
     );
   }
