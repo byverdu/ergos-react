@@ -7,21 +7,16 @@ export default class Footer extends Component {
     super( props );
 
     this.state = props.data;
-    this.handleOnClick = this.handleOnClick.bind( this );
-  }
-
-  handleOnClick() {
-    window.alert( 'xoxoxoxoxo' );
   }
 
   render() {
-    const { listItems, textButton } = this.state;
+    const { listItems, textBtn, modal } = this.state;
     return(
       <div>
         <ul>
           { getFooterListItems( listItems ) }
         </ul>
-        <ErgosModal buttonLabel={ textButton } />
+        <ErgosModal modalData={ modal } buttonLabel={ textBtn } />
       </div>
     );
   }

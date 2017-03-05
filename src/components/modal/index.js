@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, ListGroup } from 'reactstrap';
+import { getModalItems } from '../utils/';
 
 export default class ErgosModal extends Component {
   constructor( props ) {
@@ -7,31 +8,36 @@ export default class ErgosModal extends Component {
     this.state = {
       modal: false
     };
-
-    this.handleToggle = this.handleToggle.bind( this );
+    console.log( props );
+    this.toggle = this.toggle.bind( this );
   }
 
-  handleToggle() {
+  toggle() {
     this.setState({
       modal: !this.state.modal
     });
   }
 
   render() {
+    const { textBtn, header, content } = this.props.modalData;
     return (
       <div>
-        <Button outline color="danger" onClick={this.handleToggle}>{this.props.buttonLabel}</Button>
+        <Button outline color="primary" onClick={this.toggle}>{this.props.buttonLabel}</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>
-            Informaciò Legal
+            { header }
           </ModalHeader>
 
           <ModalBody>
-            Hello World
+            <ListGroup>
+              { getModalItems( content ) }
+            </ListGroup>
           </ModalBody>
 
           <ModalFooter>
-            <Button color="success" onClick={this.handleToggle}>Tancar</Button>
+            <Button color="success" onClick={this.toggle}>
+              {textBtn}
+            </Button>
           </ModalFooter>
         </Modal>
       </div>

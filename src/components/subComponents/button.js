@@ -1,17 +1,19 @@
 import React, { Component, PropTypes } from 'react';
+import { Button } from 'reactstrap';
 
-export default class Button extends Component {
+export default class ErgosButton extends Component {
   render() {
-    const { propHandleClick, text } = this.props;
+    const { propHandleClick, text, color, outline } = this.props;
     return (
-      <button onClick={ propHandleClick }>
+      <Button outline color={ color } onClick={ propHandleClick }>
         { text }
-      </button>
+      </Button>
     );
   }
 }
 
-Button.propTypes = {
+ErgosButton.propTypes = {
   text: PropTypes.string.isRequired,
-  propHandleClick: PropTypes.func.isRequired
+  propHandleClick: PropTypes.func.isRequired,
+  color: PropTypes.string.isRequired
 }
