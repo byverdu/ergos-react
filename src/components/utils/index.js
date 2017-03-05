@@ -4,7 +4,7 @@ import Option from '../subComponents/option';
 import Address from '../icons/placeholder';
 import Mail from '../icons/mail';
 import Phone from '../icons/phone';
-import { NavItem } from 'reactstrap';
+import { NavItem, ListGroupItem } from 'reactstrap';
 
 const getHeaderLinks = ( propsLinksList ) => {
   return propsLinksList.map(( link, index ) => (
@@ -44,8 +44,17 @@ const getHeaderOptions = ( propsOptionsList ) => {
     });
   }
 
+  const getModalItems = ( propsitems ) => {
+      return propsitems.map(( item, index ) => (
+        <ListGroupItem key={ index }>
+          <span className="key">{ item.key }</span> <span className="value">{ item.value }</span>
+        </ListGroupItem>
+      ));
+    }
+
 export {
   getHeaderLinks,
   getHeaderOptions,
-  getFooterListItems
+  getFooterListItems,
+  getModalItems
 }
