@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getFooterListItems } from '../utils';
-import Button from '../subComponents/button';
+import ErgosModal from '../modal'
 
 export default class Footer extends Component {
   constructor( props ) {
@@ -21,7 +21,7 @@ export default class Footer extends Component {
         <ul>
           { getFooterListItems( listItems ) }
         </ul>
-        <Button text={ textButton } propHandleClick={ this.handleOnClick } />
+        <ErgosModal buttonLabel={ textButton } />
       </div>
     );
   }
