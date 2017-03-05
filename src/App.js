@@ -4,6 +4,7 @@ import Footer from './components/footer';
 import Loading from './components/subComponents/loading';
 import './App.css';
 import axios from 'axios';
+import { Container } from 'reactstrap';
 
 export default class App extends Component {
   constructor( props ) {
@@ -38,10 +39,10 @@ export default class App extends Component {
       );
     }
     return (
-      <div>
+      <Container fluid>
         <Header data={ header }/>
         <Footer data={ footer }/>
-      </div>
+      </Container>
     );
   }
 }

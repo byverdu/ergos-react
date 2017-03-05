@@ -13,6 +13,9 @@
     ],
     "selectedOption": {
       "value": "cat"
+    },
+    "toggle": {
+      "isOpen": false
     }
   },
   "footer": {
