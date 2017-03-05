@@ -4,7 +4,7 @@ import Footer from './components/footer';
 import Loading from './components/subComponents/loading';
 import './App.css';
 import axios from 'axios';
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 export default class App extends Component {
   constructor( props ) {
@@ -39,9 +39,17 @@ export default class App extends Component {
       );
     }
     return (
-      <Container fluid>
-        <Header data={ header }/>
-        <Footer data={ footer }/>
+      <Container fluid className="wrapper">
+        <Row>
+          <Col xs="12">
+            <Header data={ header } />
+          </Col>
+        </Row>
+          <Row>
+            <Col xs="12">
+              <Footer data={ footer }/>
+            </Col>
+          </Row>
       </Container>
     );
   }

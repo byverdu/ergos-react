@@ -6,7 +6,7 @@ import Dropdown from './dropdown';
 import logo from '../media/logo.png';
 import { getHeaderLinks, getHeaderOptions } from '../utils/';
 import {
-  Row, Col, Navbar, NavbarToggler, NavbarBrand, Collapse
+  Navbar, NavbarToggler, NavbarBrand, Collapse
 } from 'reactstrap';
 
 export default class Header extends Component {
@@ -16,7 +16,7 @@ export default class Header extends Component {
     console.log( this.state );
 
     this.handleChange = this.handleChange.bind( this );
-    this.toggle = this.toggle.bind( this );
+    this.handleToggle = this.handleToggle.bind( this );
   }
 
   handleChange( event ) {
@@ -24,7 +24,7 @@ export default class Header extends Component {
     this.setState({ value: event.target.value });
   }
 
-  toggle() {
+  handleToggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
@@ -33,26 +33,20 @@ export default class Header extends Component {
   render() {
     const { title, altImg, linksList, optionsList, selectedOption, isOpen } = this.state;
     return (
-      <Row>
-        <Col md="2"></Col>
-        <Col xs="12" md="8">
-          <Navbar color="primary" light toggleable>
-            <NavbarToggler right onClick={this.toggle} />
-            <NavbarBrand href="/">
-            <Logo srcImg={ logo } altImg={ altImg } />
-              <Title title={ title }/>
-            </NavbarBrand>
-            <Collapse isOpen={isOpen} navbar>
-              <ErgosNav linksList={ getHeaderLinks( linksList ) } />
-            </Collapse>
-            <header>
+      <Navbar color="primary" light toggleable>
+        <NavbarToggler right onClick={this.handleToggle} />
+        <NavbarBrand href="/">
+        <Logo srcImg={ logo } altImg={ altImg } />
+          <Title title={ title }/>
+        </NavbarBrand>
+        <Collapse isOpen={isOpen} navbar>
+          <ErgosNav linksList={ getHeaderLinks( linksList ) } />
+        </Collapse>
+        <header>
 
-              <Dropdown optionsList={ getHeaderOptions( optionsList ) } propValue={ selectedOption.value } propHandleChange={ this.handleChange } />
-            </header>
-          </Navbar>
-        </Col>
-        <Col md="2"></Col>
-      </Row>
+          <Dropdown optionsList={ getHeaderOptions( optionsList ) } propValue={ selectedOption.value } propHandleChange={ this.handleChange } />
+        </header>
+      </Navbar>
     )
   }
 }
