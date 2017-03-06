@@ -10,6 +10,7 @@
     "react-addons-transition-group": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-html-parser": "^1.0.3",
+    "react-responsive-carousel": "^3.1.2",
     "reactstrap": "^4.2.0"
   },
   "devDependencies": {
