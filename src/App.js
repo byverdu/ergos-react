@@ -5,6 +5,7 @@ import Loading from './components/subComponents/loading';
 import './App.css';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
+import ErgosCarousel from './components/carousel';
 import ReactHtmlParser from 'react-html-parser';
 
 export default class App extends Component {
@@ -50,6 +51,7 @@ export default class App extends Component {
         </Row>
         <Row>
           <Col xs="12">
+            <ErgosCarousel />
             { ReactHtmlParser( content.index ) }
           </Col>
         </Row>
