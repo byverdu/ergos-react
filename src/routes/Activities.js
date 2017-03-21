@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import Header from '../components/header';
-import Footer from '../components/footer';
-import Loading from '../components/subComponents/loading';
 import axios from 'axios';
-import { Container, Row, Col } from 'reactstrap';
-// import ErgosCarousel from '../components/carousel';
-// import ReactHtmlParser from 'react-html-parser';
+import { Row, Col } from 'reactstrap';
+import ReactHtmlParser from 'react-html-parser';
 
 export default class Activities extends Component {
   constructor( props ) {
@@ -33,32 +29,13 @@ export default class Activities extends Component {
   }
 
   render() {
-    const { header, content, footer } = this.state;
-    if( !this.state.header.title ) {
-      return (
-        <div>
-          <Loading />
-        </div>
-      );
-    }
+    const { content } = this.state;
     return (
-      <Container fluid className="wrapper">
-        <Row>
-          <Col xs="12">
-            <Header data={ header } />
-          </Col>
-        </Row>
-        <Row>
-          <Col xs="12">
-            <div>Activities</div>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs="12">
-            <Footer data={ footer }/>
-          </Col>
-        </Row>
-      </Container>
+      <Row>
+        <Col xs="12">
+          { ReactHtmlParser( content.activity ) }
+        </Col>
+      </Row>
     );
   }
 }

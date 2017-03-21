@@ -1,18 +1,17 @@
 import React from 'react';
-import ErgosLink from '../subComponents/ergosLink';
 import Option from '../subComponents/option';
 import Address from '../icons/placeholder';
 import Mail from '../icons/mail';
 import Phone from '../icons/phone';
 import { NavItem, ListGroupItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const getHeaderLinks = ( propsLinksList ) => {
   return propsLinksList.map(( link, index ) => (
     <NavItem key={ index }>
-      <ErgosLink
-        linkHref={ link.href }
-        linkText={ link.text }
-      />
+      <Link to={ link.href } className="nav-link">
+        { link.text }
+      </Link>
     </NavItem>
   ));
 }
