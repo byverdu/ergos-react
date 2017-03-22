@@ -4,13 +4,11 @@ import Footer from './components/footer';
 import Loading from './components/subComponents/loading';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './routes/Home';
 import Activities from './routes/Activities';
+import Services from './routes/Services';
 
 export default class App extends Component {
   constructor( props ) {
@@ -45,6 +43,10 @@ export default class App extends Component {
     return <Activities data={this.state.content} />
   }
 
+  servicesRenderer() {
+    return <Activities data={this.state.content} />
+  }
+
   render() {
     const { header, footer } = this.state;
     if( !this.state.header.title ) {
@@ -72,6 +74,10 @@ export default class App extends Component {
             <Route
               path="/activitats"
               render={this.activityRenderer.bind( this )}
+            />
+            <Route
+              path="/serveis"
+              render={this.servicesRenderer.bind( this )}
             />
           </Col>
         </Row>
