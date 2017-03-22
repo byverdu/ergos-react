@@ -1,37 +1,30 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Row, Col } from 'reactstrap';
 import ErgosCarousel from '../components/carousel';
+import Loading from '../components/subComponents/loading';
 import ReactHtmlParser from 'react-html-parser';
 
 export default class Home extends Component {
   constructor( props ) {
     super( props )
 
-    this.state = {
-      content: {}
-    };
-  }
-
-  componentDidMount() {
-    axios.get(  './json/index.json' )
-      .then(  res => {
-        console.log( res.data );
-        const responseData = {
-          content: res.data.content
-        };
-
-      this.setState( responseData );
-    });
+    this.state = this.props.data;
   }
 
   render() {
-    const { content } = this.state;
+    const { index } = this.state;
+    if( !index ) {
+      return (
+        <div>
+          <Loading />
+        </div>
+      );
+    }
     return (
       <Row>
         <Col xs="12">
           <ErgosCarousel />
-          { ReactHtmlParser( content.index ) }
+          { ReactHtmlParser( index ) }
         </Col>
       </Row>
     );

@@ -37,6 +37,14 @@ export default class App extends Component {
     });
   }
 
+  homeRenderer() {
+    return <Home data={this.state.content} />
+  }
+
+  activityRenderer() {
+    return <Activities data={this.state.content} />
+  }
+
   render() {
     const { header, footer } = this.state;
     if( !this.state.header.title ) {
@@ -56,8 +64,15 @@ export default class App extends Component {
         </Row>
         <Row>
           <Col xs="12">
-            <Route exact path="/" component={ Home }/>
-            <Route path="/activitats" component={ Activities }/>
+            <Route
+              exact
+              path="/"
+              render={this.homeRenderer.bind( this )}
+            />
+            <Route
+              path="/activitats"
+              render={this.activityRenderer.bind( this )}
+            />
           </Col>
         </Row>
         <Row>
