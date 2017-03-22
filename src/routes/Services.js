@@ -7,11 +7,14 @@ export default class Services extends Component {
   constructor( props ) {
     super( props )
 
-    this.state = this.props.data;
+    this.state = {
+      services: this.props.data.content.services,
+      selectedOption: this.props.data.selectedOption
+    }
   }
 
   render() {
-    const { services } = this.state;
+    const { services, selectedOption } = this.state;
     if( !services ) {
       return (
         <div>
@@ -22,7 +25,7 @@ export default class Services extends Component {
     return (
       <Row>
         <Col xs="12">
-          { ReactHtmlParser( services ) }
+          { ReactHtmlParser( services[ selectedOption ])}
         </Col>
       </Row>
     );

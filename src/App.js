@@ -17,7 +17,8 @@ export default class App extends Component {
     this.state = {
       header: {},
       content: {},
-      footer: {}
+      footer: {},
+      defaultLang: ""
     };
   }
 
@@ -28,7 +29,8 @@ export default class App extends Component {
         const responseData = {
           header: res.data.header,
           content: res.data.content,
-          footer: res.data.footer
+          footer: res.data.footer,
+          selectedOption: res.data.header.selectedOption.value
         };
 
       this.setState( responseData );
@@ -43,12 +45,16 @@ export default class App extends Component {
     return <Activities data={this.state.content} />
   }
 
-  servicesRenderer() {
-    return <Activities data={this.state.content} />
+  servicesRenderer( content, selectedOption ) {
+    return <Services data={{ content, selectedOption }} />
+  }
+
+  getDefaultLang() {
+
   }
 
   render() {
-    const { header, footer } = this.state;
+    const { header, footer, content, selectedOption } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -77,7 +83,7 @@ export default class App extends Component {
             />
             <Route
               path="/serveis"
-              render={this.servicesRenderer.bind( this )}
+              render={this.servicesRenderer.bind( this, content, selectedOption )}
             />
           </Col>
         </Row>
