@@ -18,8 +18,10 @@ export default class App extends Component {
       header: {},
       content: {},
       footer: {},
-      defaultLang: ""
+      selectedOption: {value: ""}
     };
+    this.onChildChanged = this.onChildChanged.bind( this );
+
   }
 
   componentDidMount() {
@@ -30,11 +32,19 @@ export default class App extends Component {
           header: res.data.header,
           content: res.data.content,
           footer: res.data.footer,
-          selectedOption: res.data.header.selectedOption.value
+          selectedOption: {
+            value: res.data.header.selectedOption.value
+          }
         };
 
       this.setState( responseData );
     });
+  }
+
+  onChildChanged( event ) {
+    this.setState({selectedOption : {
+      value: event.target.value}})
+    console.log( event.target.value, 'parent' );
   }
 
   homeRenderer() {
@@ -45,16 +55,13 @@ export default class App extends Component {
     return <Activities data={this.state.content} />
   }
 
-  servicesRenderer( content, selectedOption ) {
-    return <Services data={{ content, selectedOption }} />
-  }
-
-  getDefaultLang() {
-
+  servicesRenderer() {
+    const content = this.state.content.services[ this.state.selectedOption.value ]
+    return <Services data={ content } />
   }
 
   render() {
-    const { header, footer, content, selectedOption } = this.state;
+    const { header, footer  } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -67,7 +74,7 @@ export default class App extends Component {
         <Container fluid className="wrapper">
         <Row>
           <Col xs="12">
-            <Header data={ header } />
+            <Header data={ header } callbackParent={ this.onChildChanged }/>
           </Col>
         </Row>
         <Row>
@@ -83,7 +90,7 @@ export default class App extends Component {
             />
             <Route
               path="/serveis"
-              render={this.servicesRenderer.bind( this, content, selectedOption )}
+              render={this.servicesRenderer.bind( this )}
             />
           </Col>
         </Row>
@@ -97,3 +104,39 @@ export default class App extends Component {
     )
   }
 }
+
+
+
+// class MyContainer extends React.Component {
+//     constructor() {
+//       super();
+//       this.state = { checked: false }
+//     }
+//     onChildChanged(newState) {
+//       this.setState({ checked: newState })
+//     }
+//     render() { return <div>
+//       <div>Are you checked ? {this.state.checked ? 'yes' : 'no'}</div>
+//         <ToggleButton text="Toggle me"
+//                       initialChecked={this.state.checked}
+//                       callbackParent={(newState) => this.onChildChanged(newState) } />
+//       </div>
+//     }
+// }
+
+// class ToggleButton extends React.Component {
+//   constructor({ initialChecked }) {
+//     super();
+//     this.state = { checked: initialChecked }
+//   }
+//   onTextChanged() {
+//     const newState = !this.state.checked;
+//     this.setState({ checked: newState }); // we update our state
+//     this.props.callbackParent(newState); // we notify our parent
+//   }
+//   render() {
+//     return <label>{this.props.text}: <input type="checkbox"
+//                                             checked={this.state.checked}
+//                                             onChange={() => this.onTextChanged()}/></label>
+//   }
+// }

@@ -20,8 +20,10 @@ export default class Header extends Component {
   }
 
   handleChange( event ) {
-    console.log( event );
-    this.setState({ value: event.target.value });
+    console.log(  event.target.value , 'child' );
+    this.props.callbackParent( event );
+      this.setState({selectedOption : {
+        value: event.target.value}})
   }
 
   handleToggle() {
@@ -44,7 +46,10 @@ export default class Header extends Component {
         </Collapse>
         <header>
 
-          <Dropdown optionsList={ getHeaderOptions( optionsList ) } propValue={ selectedOption.value } propHandleChange={ this.handleChange } />
+          <Dropdown
+            optionsList={ getHeaderOptions( optionsList ) }
+            value={ selectedOption.value }
+            propHandleChange={ this.handleChange } />
         </header>
       </Navbar>
     )

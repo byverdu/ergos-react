@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 
 export default class Dropdown extends Component {
   render() {
-    const { propValue, propHandleChange, optionsList } = this.props;
+    const { value, propHandleChange, optionsList } = this.props;
     return(
       <select
-        value={ propValue }
+        value={ value }
         onChange={ propHandleChange }
       >
         { optionsList }
@@ -15,7 +15,7 @@ export default class Dropdown extends Component {
 }
 
 Dropdown.propTypes = {
-  propValue: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   optionsList: PropTypes.array.isRequired,
   propHandleChange: PropTypes.func.isRequired
 }

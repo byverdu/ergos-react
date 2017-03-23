@@ -8,14 +8,21 @@ export default class Services extends Component {
     super( props )
 
     this.state = {
-      services: this.props.data.content.services,
-      selectedOption: this.props.data.selectedOption
-    }
+      content: this.props.data
+    };
+  }
+
+  shouldComponentUpdate( nextProps, nextState ) {
+    return nextProps.data !== this.state.content;
+  }
+
+  componentDidUpdate( nextProps, nextState ) {
+    this.setState({content: nextProps.data})
   }
 
   render() {
-    const { services, selectedOption } = this.state;
-    if( !services ) {
+    const { content } = this.state;
+    if( !content ) {
       return (
         <div>
           <Loading />
@@ -25,7 +32,7 @@ export default class Services extends Component {
     return (
       <Row>
         <Col xs="12">
-          { ReactHtmlParser( services[ selectedOption ])}
+          { ReactHtmlParser( content )}
         </Col>
       </Row>
     );
