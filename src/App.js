@@ -21,7 +21,6 @@ export default class App extends Component {
       selectedOption: {value: ""}
     };
     this.onChildChanged = this.onChildChanged.bind( this );
-
   }
 
   componentDidMount() {
@@ -47,18 +46,22 @@ export default class App extends Component {
     console.log( event.target.value, 'parent' );
   }
 
+  getContentForPage( pageProp ) {
+    return this.state.content[ pageProp ][ this.state.selectedOption.value ];
+  }
+
   homeRenderer() {
-    const content = this.state.content.index[ this.state.selectedOption.value ]
+    const content = this.getContentForPage( 'index' );
     return <Home data={content} />
   }
 
   activityRenderer() {
-    const content = this.state.content.activities[ this.state.selectedOption.value ]
+    const content = this.getContentForPage( 'activities' );
     return <Activities data={ content } />
   }
 
   servicesRenderer() {
-    const content = this.state.content.services[ this.state.selectedOption.value ]
+    const content = this.getContentForPage( 'services' );
     return <Services data={ content } />
   }
 
