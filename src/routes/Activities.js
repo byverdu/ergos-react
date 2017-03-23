@@ -7,12 +7,22 @@ export default class Activities extends Component {
   constructor( props ) {
     super( props )
 
-    this.state = this.props.data;
+    this.state = {
+      content: this.props.data
+    };
+  }
+
+  shouldComponentUpdate( nextProps, nextState ) {
+    return nextProps.data !== this.state.content;
+  }
+
+  componentDidUpdate( nextProps, nextState ) {
+    this.setState({content: nextProps.data})
   }
 
   render() {
-    const { activity } = this.state;
-    if( !activity ) {
+    const { content } = this.state;
+    if( !content ) {
       return (
         <div>
           <Loading />
@@ -22,7 +32,7 @@ export default class Activities extends Component {
     return (
       <Row>
         <Col xs="12">
-          { ReactHtmlParser( activity ) }
+          { ReactHtmlParser( content )}
         </Col>
       </Row>
     );

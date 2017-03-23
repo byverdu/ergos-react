@@ -1,50 +1,76 @@
 {
-  "header" : {
-    "title": "Residencia Ergos",
-    "altImg": "logo residencia ergos",
-    "linksList": [
-      {"href": "/", "text": "Home"},
-      {"href": "/activitats", "text": "Activitats"},
-      {"href": "/serveis", "text": "Serveis"}
-    ],
-    "optionsList": [
-      { "value": "sel", "text": "Idioma" },
-      { "value": "es", "text": "Castellano" },
-      { "value": "cat", "text": "Català" }
-    ],
-    "selectedOption": {
-      "value": "cat"
-    },
-    "toggle": {
-      "isOpen": false
-    }
-  },
-  "footer": {
-    "listItems": [
-      {"iconType": "address","text": "C/ Pomaret 25, Barcelona"},
-      {"iconType": "mail","text": "C.P 08017"},
-      {"iconType": "phone","text": "+34 934 174 187"}
-    ],
-    "textBtn": "Info Legal",
-    "modal": {
-      "header": "Informaciò Legal",
-      "textBtn": "Tancar",
-      "content": [
-        {"key": "Raò social :", "value": "RESIDENCIA ERGOS S.A."},
-        {"key": "Direcciò social :", "value": "C/ Pomaret, 25, 08017, Barcelona"},
-        {"key": "Tel-Fax :", "value": "93 417 41 87 / 93 417 42 60"},
-        {"key": "Forma jurídica :", "value": "Societat Anònima"},
-        {"key": "CIF :", "value": "A59312405"},
-        {"key": "Directora :", "value": "Elena Ventura Martín"}
-      ]
-    }
-  },
-  "content": {
-    "index": "<h1>Qui Som?</h1><p><strong>Residència Ergos</strong> ès una llar assistencial per a persones grans que necessiten un permanent suport sanitari i psicològic.</p><p>Està situada en un lloc ideal per a un centre d´aquestes característiques, en el barri més tranquil i a la vegada ben comunicat de <strong>Barcelona, Sarrià</strong></p><p>L´ampli edifici disposa de més de <strong>1.300 metres quadrats</strong> en tres plantes comunicades per ascensor, sense barreres arquitectòniques i envoltat d´un ampli i assolellat jardí.</p>",
-    "activity": "<p>L´atenció psicològica dels residents té com objectiu proporcionar un programa d´activitats <strong>per conservar i estimular les capacitats cognitives i psicomotores</strong>.</p><p>Aquest programa conté diverses activitats adaptades a les característiques i situació individual de cada resident:</p><ul><li>Fisioterapia i grups de gimnàsia</li><li>Psicomotricitat</li><li>Estimulació del llenguatge</li><li>Tallers d`atenció i memòria</li></ul><ul><li>Tallers de psicoteràpia</li><li>Zooteràpia</li><li>Tallers de cuina</li><li>Musicoteràpia i activitats musicals</li></ul>",
-    "services": {
-      "cat": "<p><strong>Residència Ergos</strong> compta amb un equip de professionals de gran experiència i qualificació per atendre a persones amb un <strong>alt nivell de dependència</strong>.</p><p>Proporcionem atenció mèdica i psicològica continuades, fisioteràpia i rehabilitació, medicació i dietes adequades a cada patologia. Activitats lúdiques i totes les atencions pròpies de les <strong>necessitats bàsiques de les persones grans</strong> amb la finalitat d`aconseguir el màxim benestar individual i col·lectiu.</p><ul><li>Residència assistida</li><li>Atenció mèdica</li><li>Atenció psicològica</li><li>Fisioteràpia i grups de gimnàsia</li><li>Perruqueria i podologia</li><li>Gerocultors/res les 24 hores</li><li>Cuina pròpia i menjar casolà</li><li>Dietes especials</li></ul><ul><li>Bugaderia i planxat de la roba</li><li>Possibilitat de menjar amb el resident</li><li>Activitats lúdiques i manualitats</li><li>Espais de convivència i reunió</li><li>Sales de TV</li><li>Sessions de cinema</li><li>Horaris lliures de visita</li><li>Tramitació de la medicació per la S.S.</li></ul>",
-      "es": "<p><strong>Residencia Ergos</strong> cuenta con un equipo de profesionales de contrastada experiencia y cualificación para atender a personas aquejadas de un <strong>alto nivel de dependencia</strong>.</p><p>Proporcionamos atención médica y psicológica continuada, fisioterapia y rehabilitación, medicación y dietas adecuadas a cada patología.  Actividades lúdicas y todas las atenciones propias de las <strong>necesidades básicas de la gente mayor</strong> con la finalidad de conseguir su máximo bienestar individual y colectivo.</p><ul><li>Residencia assistida</li><li>Atención medica</li><li>Atención psicológica</li><li>Fisioterapia y grupos de gimnasia</li><li>Peluqueria y podología</li><li>Gerocultores las 24 horas</li><li>Cocina propia con comida casera</li><li>Dietas especials</li></ul><ul><li>Lavandería y planchado de la ropa</li><li>Posibilidad de comer con el residente</li><li>Actividades lúdicas y manuales</li><li>Espacios de convivencia y reunión</li><li>Salas de TV</li><li>Sesiones de cine</li><li>Horarios libres de visita</li><li>Tramitación de la medicación por la S.S.</li></ul>"
-      }
-  }
+	"header": {
+		"title": "Residencia Ergos",
+		"altImg": "logo residencia ergos",
+		"linksList": [{
+			"href": "/",
+			"text": "Home"
+		}, {
+			"href": "/activitats",
+			"text": "Activitats"
+		}, {
+			"href": "/serveis",
+			"text": "Serveis"
+		}],
+		"optionsList": [{
+			"value": "es",
+			"text": "Castellano"
+		}, {
+			"value": "cat",
+			"text": "Català"
+		}],
+		"selectedOption": {
+			"value": "cat"
+		},
+		"toggle": {
+			"isOpen": false
+		}
+	},
+	"footer": {
+		"listItems": [{
+			"iconType": "address",
+			"text": "C/ Pomaret 25, Barcelona"
+		}, {
+			"iconType": "mail",
+			"text": "C.P 08017"
+		}, {
+			"iconType": "phone",
+			"text": "+34 934 174 187"
+		}],
+		"textBtn": "Info Legal",
+		"modal": {
+			"header": "Informaciò Legal",
+			"textBtn": "Tancar",
+			"content": [{
+				"key": "Raò social :",
+				"value": "RESIDENCIA ERGOS S.A."
+			}, {
+				"key": "Direcciò social :",
+				"value": "C/ Pomaret, 25, 08017, Barcelona"
+			}, {
+				"key": "Tel-Fax :",
+				"value": "93 417 41 87 / 93 417 42 60"
+			}, {
+				"key": "Forma jurídica :",
+				"value": "Societat Anònima"
+			}, {
+				"key": "CIF :",
+				"value": "A59312405"
+			}, {
+				"key": "Directora :",
+				"value": "Elena Ventura Martín"
+			}]
+		}
+	},
+	"content": {
+		"index": "<h1>Qui Som?</h1><p><strong>Residència Ergos</strong> ès una llar assistencial per a persones grans que necessiten un permanent suport sanitari i psicològic.</p><p>Està situada en un lloc ideal per a un centre d´aquestes característiques, en el barri més tranquil i a la vegada ben comunicat de <strong>Barcelona, Sarrià</strong></p><p>L´ampli edifici disposa de més de <strong>1.300 metres quadrats</strong> en tres plantes comunicades per ascensor, sense barreres arquitectòniques i envoltat d´un ampli i assolellat jardí.</p>",
+		"activities": {
+			"cat": "<p> L´ atenció psicològica dels residents té com objectiu proporcionar un programa d´ activitats < strong > per conservar i estimular les capacitats cognitives i psicomotores </strong>.</p> <p> Aquest programa conté diverses activitats adaptades a les característiques i situació individual de cada resident: </p><ul><li>Fisioterapia i grups de gimnàsia</li> <li> Psicomotricitat </li><li>Estimulació del llenguatge</li> <li> Tallers d `atenció i memòria</li></ul><ul><li>Tallers de psicoteràpia</li><li>Zooteràpia</li><li>Tallers de cuina</li><li>Musicoteràpia i activitats musicals</li></ul>",
+			"es": "<p>La atención psicológica de los residentes tiene como objetivo proporcionar un programa de actividades <strong>para conservar y estimular las capacidades cognitivas y psicomotrices</strong>.</p><p>Este programa contiene diversas actividades adaptadas a las características y situación individual de cada uno de los residentes:</p><ul><li>Fisioterapia y grupos de gimnasia</li><li>Psicomotricidad</li><li>Estimulación del lenguaje</li><li>Talleres de atención y memória</li></ul><ul><li>Talleres de psicoterapia</li><li>Zooterapia</li><li>Talleres de cocina</li><li>Musicoterapia y actividades musicales</li></ul>"
+		},
+		"services": {
+			"cat": "<p><strong>Residència Ergos</strong> compta amb un equip de professionals de gran experiència i qualificació per atendre a persones amb un <strong>alt nivell de dependència</strong>.</p><p>Proporcionem atenció mèdica i psicològica continuades, fisioteràpia i rehabilitació, medicació i dietes adequades a cada patologia. Activitats lúdiques i totes les atencions pròpies de les <strong>necessitats bàsiques de les persones grans</strong> amb la finalitat d`aconseguir el màxim benestar individual i col· lectiu. </p><ul><li>Residència assistida</li> <li> Atenció mèdica </li><li>Atenció psicològica</li> <li> Fisioteràpia i grups de gimnàsia </li><li>Perruqueria i podologia</li> <li> Gerocultors / res les 24 hores </li><li>Cuina pròpia i menjar casolà</li> <li> Dietes especials </li></ul > < ul > <li> Bugaderia i planxat de la roba </li><li>Possibilitat de menjar amb el resident</li> <li> Activitats lúdiques i manualitats </li><li>Espais de convivència i reunió</li> <li> Sales de TV </li><li>Sessions de cinema</li> <li> Horaris lliures de visita </li><li>Tramitació de la medicació per la S.S.</li> </ul>",
+			"es": "<p><strong>Residencia Ergos</strong> cuenta con un equipo de profesionales de contrastada experiencia y cualificación para atender a personas aquejadas de un <strong>alto nivel de dependencia</strong>.</p><p>Proporcionamos atención médica y psicológica continuada, fisioterapia y rehabilitación, medicación y dietas adecuadas a cada patología.  Actividades lúdicas y todas las atenciones propias de las <strong>necesidades básicas de la gente mayor</strong> con la finalidad de conseguir su máximo bienestar individual y colectivo.</p><ul><li>Residencia assistida</li><li>Atención medica</li><li>Atención psicológica</li><li>Fisioterapia y grupos de gimnasia</li><li>Peluqueria y podología</li><li>Gerocultores las 24 horas</li><li>Cocina propia con comida casera</li><li>Dietas especials</li></ul><ul><li>Lavandería y planchado de la ropa</li><li>Posibilidad de comer con el residente</li><li>Actividades lúdicas y manuales</li><li>Espacios de convivencia y reunión</li><li>Salas de TV</li><li>Sesiones de cine</li><li>Horarios libres de visita</li><li>Tramitación de la medicación por la S.S.</li></ul>"
+		}
+	}
 }

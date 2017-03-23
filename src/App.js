@@ -52,7 +52,8 @@ export default class App extends Component {
   }
 
   activityRenderer() {
-    return <Activities data={this.state.content} />
+    const content = this.state.content.activities[ this.state.selectedOption.value ]
+    return <Activities data={ content } />
   }
 
   servicesRenderer() {
