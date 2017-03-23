@@ -8,12 +8,22 @@ export default class Home extends Component {
   constructor( props ) {
     super( props )
 
-    this.state = this.props.data;
+    this.state = {
+      content: this.props.data
+    };
+  }
+
+  shouldComponentUpdate( nextProps, nextState ) {
+    return nextProps.data !== this.state.content;
+  }
+
+  componentDidUpdate( nextProps, nextState ) {
+    this.setState({content: nextProps.data})
   }
 
   render() {
-    const { index } = this.state;
-    if( !index ) {
+    const { content } = this.state;
+    if( !content ) {
       return (
         <div>
           <Loading />
@@ -24,7 +34,7 @@ export default class Home extends Component {
       <Row>
         <Col xs="12">
           <ErgosCarousel />
-          { ReactHtmlParser( index ) }
+          { ReactHtmlParser( content ) }
         </Col>
       </Row>
     );
