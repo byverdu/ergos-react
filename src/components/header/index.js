@@ -33,7 +33,8 @@ export default class Header extends Component {
   }
 
   render() {
-    const { title, altImg, linksList, optionsList, selectedOption, isOpen } = this.state;
+    const { title, altImg, linksList, optionsList, isOpen } = this.state;
+    const lang = this.state.selectedOption.value;
     return (
       <Navbar color="primary" light toggleable>
         <NavbarToggler right onClick={this.handleToggle} />
@@ -42,13 +43,13 @@ export default class Header extends Component {
           <Title title={ title }/>
         </NavbarBrand>
         <Collapse isOpen={isOpen} navbar>
-          <ErgosNav linksList={ getHeaderLinks( linksList ) } />
+          <ErgosNav linksList={ getHeaderLinks( linksList[ lang ])} />
         </Collapse>
         <header>
 
           <Dropdown
-            optionsList={ getHeaderOptions( optionsList ) }
-            value={ selectedOption.value }
+            optionsList={ getHeaderOptions( optionsList )}
+            value={ lang }
             propHandleChange={ this.handleChange } />
         </header>
       </Navbar>

@@ -41,9 +41,11 @@ export default class App extends Component {
   }
 
   onChildChanged( event ) {
-    this.setState({selectedOption : {
-      value: event.target.value}})
-    console.log( event.target.value, 'parent' );
+    this.setState({
+      selectedOption : {
+        value: event.target.value
+      }
+    });
   }
 
   getContentForPage( pageProp ) {
@@ -66,7 +68,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { header, footer  } = this.state;
+    const { header, footer, selectedOption  } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -101,7 +103,7 @@ export default class App extends Component {
         </Row>
         <Row>
           <Col xs="12">
-            <Footer data={ footer }/>
+            <Footer data={ {footer, selectedOption} }/>
           </Col>
         </Row>
       </Container>
