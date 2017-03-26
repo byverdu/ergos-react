@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './routes/Home';
 import Activities from './routes/Activities';
 import Services from './routes/Services';
+import Contact from './routes/Contact';
 
 export default class App extends Component {
   constructor( props ) {
@@ -31,6 +32,7 @@ export default class App extends Component {
           header: res.data.header,
           content: res.data.content,
           footer: res.data.footer,
+          contact: res.data.contact,
           selectedOption: {
             value: res.data.header.selectedOption.value
           }
@@ -67,6 +69,11 @@ export default class App extends Component {
     return <Services data={ content } />
   }
 
+  contactRenderer() {
+    const content = this.getContentForPage( 'contact' );
+    return <Contact data={ content } />
+  }
+
   render() {
     const { header, footer, selectedOption  } = this.state;
     if( !this.state.header.title ) {
@@ -98,6 +105,10 @@ export default class App extends Component {
             <Route
               path="/serveis"
               render={this.servicesRenderer.bind( this )}
+            />
+            <Route
+              path="/contacte"
+              render={this.contactRenderer.bind( this )}
             />
           </Col>
         </Row>
