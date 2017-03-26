@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './routes/Home';
 import Activities from './routes/Activities';
 import Services from './routes/Services';
+import Contact from './routes/Contact';
+import Success from './routes/Success';
 
 export default class App extends Component {
   constructor( props ) {
@@ -18,6 +20,8 @@ export default class App extends Component {
       header: {},
       content: {},
       footer: {},
+      contact: {},
+      success: {},
       selectedOption: {value: ""}
     };
     this.onChildChanged = this.onChildChanged.bind( this );
@@ -31,6 +35,8 @@ export default class App extends Component {
           header: res.data.header,
           content: res.data.content,
           footer: res.data.footer,
+          contact: res.data.contact,
+          success: res.data.success,
           selectedOption: {
             value: res.data.header.selectedOption.value
           }
@@ -41,9 +47,11 @@ export default class App extends Component {
   }
 
   onChildChanged( event ) {
-    this.setState({selectedOption : {
-      value: event.target.value}})
-    console.log( event.target.value, 'parent' );
+    this.setState({
+      selectedOption : {
+        value: event.target.value
+      }
+    });
   }
 
   getContentForPage( pageProp ) {
@@ -65,8 +73,18 @@ export default class App extends Component {
     return <Services data={ content } />
   }
 
+  contactRenderer() {
+    const content = this.getContentForPage( 'contact' );
+    return <Contact data={ content } />
+  }
+
+  successRenderer() {
+    const content = this.getContentForPage( 'success' );
+    return <Success data={ content } />
+  }
+
   render() {
-    const { header, footer  } = this.state;
+    const { header, footer, selectedOption  } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -97,11 +115,19 @@ export default class App extends Component {
               path="/serveis"
               render={this.servicesRenderer.bind( this )}
             />
+            <Route
+              path="/contacte"
+              render={this.contactRenderer.bind( this )}
+            />
+            <Route
+              path="/success"
+              render={this.successRenderer.bind( this )}
+            />
           </Col>
         </Row>
         <Row>
           <Col xs="12">
-            <Footer data={ footer }/>
+            <Footer data={ {footer, selectedOption} }/>
           </Col>
         </Row>
       </Container>

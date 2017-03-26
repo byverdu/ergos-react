@@ -6,17 +6,29 @@ export default class Footer extends Component {
   constructor( props ) {
     super( props );
 
-    this.state = props.data;
+    this.state = {
+      data: props.data.footer,
+      lang: props.data.selectedOption.value
+    };
+  }
+
+  componentWillReceiveProps( nextProps ) {
+    if ( this.state.lang !== nextProps.data.selectedOption.value ) {
+      this.setState({
+        lang: nextProps.data.selectedOption.value
+      });
+    }
   }
 
   render() {
-    const { listItems, textBtn, modal } = this.state;
+    const { listItems, infoTextBtn, modal } = this.state.data;
+    const lang = this.state.lang;
     return(
       <div>
         <ul>
           { getFooterListItems( listItems ) }
         </ul>
-        <ErgosModal modalData={ modal } buttonLabel={ textBtn } />
+        <ErgosModal modalData={ modal[ lang ] } infoTextBtn={ infoTextBtn } />
       </div>
     );
   }
