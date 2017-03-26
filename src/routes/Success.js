@@ -3,7 +3,7 @@ import { Row, Col, Progress } from 'reactstrap';
 import Loading from '../components/subComponents/loading';
 import ReactHtmlParser from 'react-html-parser';
 
-export default class Contact extends Component {
+export default class Success extends Component {
   constructor( props ) {
     super( props )
 
@@ -59,7 +59,7 @@ export default class Contact extends Component {
         <Col xs="12">
           { ReactHtmlParser( message )}
           {progress} 0:{timer < 10 ? `0${timer}` : timer}
-          <Progress color="warning" value={counter} />
+          <Progress color="warning" value={counter}> {`${Math.round( counter )}%`} </Progress>
         </Col>
       </Row>
     );
