@@ -133,10 +133,16 @@
   			"message": "Mensaje",
   			"address": "Ver dirección en Google Maps"
   		}
+  	},
+    "success": {
+  		"cat": {
+        "message": "<h3>El seu missatge ha sigut envïat amb exit.<br>En breu ens possarem en contacte.</h3>",
+        "progress": "Seràs redirigit a Inici en"
+      },
+      "es": {
+        "message": "<h3>Su mensaje ha sido enviado con éxito.<br>En breve nos pondremos en contacto.</h3>",
+        "progress": "Serás redirigido a Inicio en"
+      }
   	}
-	},
-	"successMessage": {
-		"cat": "<h3>El seu missatge ha sigut envïat amb exit.<br>En breu ens possarem en contacte.</h3>",
-		"es": "<h3>Su mensaje ha sido enviado con éxito.<br>En breve nos pondremos en contacto.</h3>"
 	}
 }

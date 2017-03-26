@@ -10,6 +10,7 @@ import Home from './routes/Home';
 import Activities from './routes/Activities';
 import Services from './routes/Services';
 import Contact from './routes/Contact';
+import Success from './routes/Success';
 
 export default class App extends Component {
   constructor( props ) {
@@ -19,6 +20,8 @@ export default class App extends Component {
       header: {},
       content: {},
       footer: {},
+      contact: {},
+      success: {},
       selectedOption: {value: ""}
     };
     this.onChildChanged = this.onChildChanged.bind( this );
@@ -33,6 +36,7 @@ export default class App extends Component {
           content: res.data.content,
           footer: res.data.footer,
           contact: res.data.contact,
+          success: res.data.success,
           selectedOption: {
             value: res.data.header.selectedOption.value
           }
@@ -74,6 +78,11 @@ export default class App extends Component {
     return <Contact data={ content } />
   }
 
+  successRenderer() {
+    const content = this.getContentForPage( 'success' );
+    return <Success data={ content } />
+  }
+
   render() {
     const { header, footer, selectedOption  } = this.state;
     if( !this.state.header.title ) {
@@ -109,6 +118,10 @@ export default class App extends Component {
             <Route
               path="/contacte"
               render={this.contactRenderer.bind( this )}
+            />
+            <Route
+              path="/success"
+              render={this.successRenderer.bind( this )}
             />
           </Col>
         </Row>
