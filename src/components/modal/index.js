@@ -20,6 +20,14 @@ export default class ErgosModal extends Component {
     });
   }
 
+  componentWillReceiveProps( nextProps ) {
+    if ( this.state.modalData.modalTextBtn !== nextProps.modalData.modalTextBtn ) {
+      this.setState({
+        modalData: nextProps.modalData
+      });
+    }
+  }
+
   render() {
     const { modalTextBtn, header, content } = this.state.modalData;
     const infoTextBtn = this.state.infoTextBtn;

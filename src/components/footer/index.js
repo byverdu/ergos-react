@@ -12,6 +12,14 @@ export default class Footer extends Component {
     };
   }
 
+  componentWillReceiveProps( nextProps ) {
+    if ( this.state.lang !== nextProps.data.selectedOption.value ) {
+      this.setState({
+        lang: nextProps.data.selectedOption.value
+      });
+    }
+  }
+
   render() {
     const { listItems, infoTextBtn, modal } = this.state.data;
     const lang = this.state.lang;
