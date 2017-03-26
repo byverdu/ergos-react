@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Form, FormGroup, Label, Input, FormText  } from 'reactstrap';
-import ReactHtmlParser from 'react-html-parser';
+import { Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import Loading from '../components/subComponents/loading';
 
 export default class Contact extends Component {
@@ -32,15 +31,25 @@ export default class Contact extends Component {
     return (
       <Row>
         <Col xs="12">
+          <p>{address}</p>
           <Form>
             <FormGroup>
-              <Label for="exampleEmail">{name}</Label>
-              <Input type="text" name={name} placeholder={name} />
+              <Label for="name">{name}</Label>
+              <Input type="text" name={name} placeholder={name} id="name"/>
             </FormGroup>
             <FormGroup>
-              <Label for="examplePassword">Password</Label>
-              <Input type="email" name="password" id="examplePassword" placeholder="password placeholder" />
+              <Label for="telephone">{telephone}</Label>
+              <Input type="number" name={telephone} id="telephone" placeholder={telephone} />
             </FormGroup>
+            <FormGroup>
+              <Label for="email">{email}</Label>
+              <Input type="email" name={email} id="email" placeholder={email} />
+            </FormGroup>
+            <FormGroup>
+              <Label for="message">{message}</Label>
+              <Input type="textarea" name={message} placeholder={message} id="message" />
+            </FormGroup>
+            <Button outline color="primary">Enviar</Button>
           </Form>
         </Col>
       </Row>
