@@ -20,8 +20,12 @@ export default class Contact extends Component {
     this.setState({content: nextProps.data})
   }
 
+  renderTransport( transport ) {
+    return transport.map(( item, index ) => ( <li key={index}>{item}</li> ));
+  }
+
   render() {
-    const { address, email, message, name, telephone } = this.state.content;
+    const { title, address, email, message, name, telephone, route, transport } = this.state.content;
     if( !address ) {
       return (
         <div>
@@ -33,8 +37,6 @@ export default class Contact extends Component {
       <div>
         <Row>
           <Col xs="12">
-            <a href="https://www.google.com/maps/place/41.404682,2.123773" target="_blank" className="map">{address}</a>
-
             <Form action="sendEmail.php" method="post">
               <FormGroup>
                 <Label for="name">{name}</Label>
@@ -57,7 +59,13 @@ export default class Contact extends Component {
           </Col>
         </Row>
         <Row>
-          <Map />
+          <Col xs="12">
+            <h1>{title}</h1>
+            <p>{address}</p>
+            <Map />
+            <a href="https://www.google.es/maps/dir//Carrer+de+Pomaret,+25,+08017+Barcelona/@41.404459,2.1216827,17z/data=!4m16!1m7!3m6!1s0x12a4983e4bf1325b:0xbd8605a8efe44a50!2sCarrer+de+Pomaret,+25,+08017+Barcelona!3b1!8m2!3d41.404459!4d2.1238714!4m7!1m0!1m5!1m1!1s0x12a4983e4bf1325b:0xbd8605a8efe44a50!2m2!1d2.1238714!2d41.404459?hl=es" target="_blank">{route}</a>
+            { this.renderTransport( transport ) }
+          </Col>
         </Row>
       </div>
     );

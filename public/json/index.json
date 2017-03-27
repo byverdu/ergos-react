@@ -124,14 +124,30 @@
   			"telephone": "Telèfon",
   			"email": "Correu electrònic",
   			"message": "Missatge",
-  			"address": "Veure adreça a Google Maps"
+        "title": "LOCALITZACIÓ",
+  			"address": "Estem al carrer Pomaret nº 25",
+        "transport": [
+          "Com arribar-hi:",
+          "Ferrocarrils: L6, S5, S55, S1, S2",
+          "Bus: 60, 75, H4, 123, V11, 70, V7, 68, 66",
+          "Cotxe: Entrada per carrer Iradier i carrer de Margenat"
+        ],
+        "route": "Calcula la teva ruta a Google Maps"
   		},
   		"es": {
   			"name": "Nombre",
   			"telephone": "Teléfono",
   			"email": "Correo electrónico",
   			"message": "Mensaje",
-  			"address": "Ver dirección en Google Maps"
+        "title": "LOCALIZACIÓN",
+  			"address": "Estamos en la calle Pomaret nº 25",
+        "transport": [
+          "Como llegar:",
+          "Ferrocarriles: L6, S5, S55, S1, S2",
+          "Bus: 60, 75, H4, 123, V11, 70, V7, 68, 66",
+          "Coche: Entrada por la calle Iradier y la calle Margenat"
+        ],
+        "route": "Calcule su ruta a Google Maps"
   		}
   	},
     "success": {
