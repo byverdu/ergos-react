@@ -22,6 +22,7 @@ export default class App extends Component {
       footer: {},
       contact: {},
       success: {},
+      images: {},
       selectedOption: {value: ""}
     };
     this.onChildChanged = this.onChildChanged.bind( this );
@@ -37,6 +38,7 @@ export default class App extends Component {
           footer: res.data.footer,
           contact: res.data.contact,
           success: res.data.success,
+          images: res.data.images,
           selectedOption: {
             value: res.data.header.selectedOption.value
           }
@@ -58,9 +60,9 @@ export default class App extends Component {
     return this.state.content[ pageProp ][ this.state.selectedOption.value ];
   }
 
-  homeRenderer() {
+  homeRenderer( images ) {
     const content = this.getContentForPage( 'index' );
-    return <Home data={content} />
+    return <Home data={content} images={images} />
   }
 
   activityRenderer() {
@@ -84,7 +86,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { header, footer, selectedOption  } = this.state;
+    const { header, footer, images, selectedOption  } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -105,7 +107,7 @@ export default class App extends Component {
             <Route
               exact
               path="/"
-              render={this.homeRenderer.bind( this )}
+              render={this.homeRenderer.bind( this, images )}
             />
             <Route
               path="/activitats"

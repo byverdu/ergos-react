@@ -9,7 +9,8 @@ export default class Home extends Component {
     super( props )
 
     this.state = {
-      content: this.props.data
+      content: this.props.data,
+      images: this.props.images
     };
   }
 
@@ -22,7 +23,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const { content } = this.state;
+    const { content, images } = this.state;
     if( !content ) {
       return (
         <div>
@@ -33,7 +34,7 @@ export default class Home extends Component {
     return (
       <Row>
         <Col xs="12">
-          <ErgosCarousel />
+          <ErgosCarousel images={images} />
           { ReactHtmlParser( content ) }
         </Col>
       </Row>

@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
 import './styles.css';
 import { Carousel } from 'react-responsive-carousel';
+import { getImagesDataFor } from '../../components/utils';
 
 export default class ErgosCarousel extends Component {
+  constructor( props ) {
+    super( props );
+
+    this.state = {
+      images: this.props.images.home
+    }
+  }
+
   render() {
+    const { items, url } = this.state.images;
     return(
       <Carousel>
-        <div>
-                    <img src="http://placehold.it/350x150" alt="xoxo" />
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src="http://placehold.it/350x150" alt="xoxo" />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src="http://placehold.it/350x150" alt="xoxo" />
-                    <p className="legend">Legend 3</p>
-                </div>
+        {getImagesDataFor( 'home', items, url )}
       </Carousel>
     );
   }

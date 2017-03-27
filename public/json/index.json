@@ -160,5 +160,11 @@
         "progress": "Serás redirigido a Inicio en"
       }
   	}
-	}
+	},
+  "images": {
+    "home": {
+      "items": 5,
+      "url": "./media/index"
+    }
+  }
 }

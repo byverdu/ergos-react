@@ -44,16 +44,29 @@ const getHeaderOptions = ( propsOptionsList ) => {
   }
 
   const getModalItems = ( propsitems ) => {
-      return propsitems.map(( item, index ) => (
-        <ListGroupItem key={ index }>
-          <span className="key">{ item.key }</span> <span className="value">{ item.value }</span>
-        </ListGroupItem>
-      ));
+    return propsitems.map(( item, index ) => (
+      <ListGroupItem key={ index }>
+        <span className="key">{ item.key }</span> <span className="value">{ item.value }</span>
+      </ListGroupItem>
+    ));
+  }
+
+  const getImagesDataFor = ( pageName, items, url ) => {
+    const images = [];
+    for ( let counter = 0; counter < items; counter ++ ) {
+      const srcUrl = `${url}/${pageName}_${counter}.jpg`;
+      const altAttr = `imagen ${counter} en ${pageName}`;
+      images.push({srcUrl, altAttr});
     }
+    return images.map(( item, index ) => (
+      <img src={item.srcUrl} alt={item.altAttr} />
+    ));
+  };
 
 export {
   getHeaderLinks,
   getHeaderOptions,
   getFooterListItems,
-  getModalItems
+  getModalItems,
+  getImagesDataFor
 }
