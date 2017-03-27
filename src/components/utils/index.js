@@ -59,7 +59,7 @@ const getHeaderOptions = ( propsOptionsList ) => {
       images.push({srcUrl, altAttr});
     }
     return images.map(( item, index ) => (
-      <img src={item.srcUrl} alt={item.altAttr} />
+      <img key={index} src={item.srcUrl} alt={item.altAttr} />
     ));
   };
 

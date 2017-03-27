@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Row, Col } from 'reactstrap';
 import ErgosCarousel from '../components/carousel';
 import Loading from '../components/subComponents/loading';
@@ -10,7 +10,8 @@ export default class Home extends Component {
 
     this.state = {
       content: this.props.data,
-      images: this.props.images
+      images: this.props.images.home,
+      pageName: 'home'
     };
   }
 
@@ -23,7 +24,7 @@ export default class Home extends Component {
   }
 
   render() {
-    const { content, images } = this.state;
+    const { content, images, pageName } = this.state;
     if( !content ) {
       return (
         <div>
@@ -34,10 +35,15 @@ export default class Home extends Component {
     return (
       <Row>
         <Col xs="12">
-          <ErgosCarousel images={images} />
+          <ErgosCarousel images={images} pageName={pageName} />
           { ReactHtmlParser( content ) }
         </Col>
       </Row>
     );
   }
+}
+
+Home.propTypes = {
+  data: PropTypes.string.isRequired,
+  images: PropTypes.object.isRequired
 }
