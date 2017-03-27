@@ -62,7 +62,7 @@ export default class App extends Component {
 
   homeRenderer( images ) {
     const content = this.getContentForPage( 'index' );
-    return <Home data={content} images={images} />
+    return <Home data={content} images={images[ 'home' ]} />
   }
 
   activityRenderer() {
@@ -70,9 +70,9 @@ export default class App extends Component {
     return <Activities data={ content } />
   }
 
-  servicesRenderer() {
+  servicesRenderer( images ) {
     const content = this.getContentForPage( 'services' );
-    return <Services data={ content } />
+    return <Services data={ content } images={images[ 'services' ]}/>
   }
 
   contactRenderer() {
@@ -115,7 +115,7 @@ export default class App extends Component {
             />
             <Route
               path="/serveis"
-              render={this.servicesRenderer.bind( this )}
+              render={this.servicesRenderer.bind( this, images )}
             />
             <Route
               path="/contacte"

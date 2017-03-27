@@ -165,6 +165,10 @@
     "home": {
       "items": 5,
       "url": "./media/index"
+    },
+    "services": {
+      "items": 5,
+      "url": "./media/services"
     }
   }
 }

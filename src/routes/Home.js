@@ -10,7 +10,7 @@ export default class Home extends Component {
 
     this.state = {
       content: this.props.data,
-      images: this.props.images.home,
+      images: this.props.images,
       pageName: 'home'
     };
   }
@@ -45,5 +45,8 @@ export default class Home extends Component {
 
 Home.propTypes = {
   data: PropTypes.string.isRequired,
-  images: PropTypes.object.isRequired
+  images: PropTypes.shape({
+    items: PropTypes.number,
+    url: PropTypes.string
+  }).isRequired
 }
