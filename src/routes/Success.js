@@ -10,7 +10,7 @@ export default class Success extends Component {
     this.state = {
       content: this.props.data,
       counter: 0,
-      clearInterval: 0,
+      intervalId: 0,
       timer: 60
     };
   }
@@ -29,14 +29,13 @@ export default class Success extends Component {
   }
 
   setTimer() {
-    console.log( 'osoosos' );
     this.setState({
       counter: this.state.counter + 1.6666667,
       timer: this.state.timer - 1
     });
     if ( this.state.timer < 0 ) {
       // not best solution
-      window.location = '/'
+      window.location = '/';
     }
   }
 
