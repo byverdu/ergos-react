@@ -21,13 +21,6 @@ const markerOptions = ( googleMaps, map ) => {
 };
 
 export default class ErgosMap extends Component {
-  constructor( props ) {
-    super( props )
-    this.state = {
-
-    }
-  }
-
   componentDidMount() {
     loadGoogleMapsAPI( Map.API_CONFIG ).then( googleMaps => {
       this.map = new googleMaps.Map( this.refs.map, mapOptions );
