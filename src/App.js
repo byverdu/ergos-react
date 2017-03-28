@@ -77,7 +77,8 @@ export default class App extends Component {
 
   servicesRenderer( images ) {
     const content = this.getContentForPage( 'services' );
-    return <Services data={ content } images={images[ 'services' ]}/>
+    const legends = this.getImagesForPage( 'services' );
+    return <Services data={ content } images={images[ 'services' ]} legends={legends}/>
   }
 
   contactRenderer() {

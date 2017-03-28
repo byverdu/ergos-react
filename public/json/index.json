@@ -184,7 +184,21 @@
     },
     "services": {
       "items": 5,
-      "url": "./media/services"
+      "url": "./media/services",
+      "legends": {
+        "cat": [
+          "Zones Comuns",
+          "Sales amb Televisió",
+          " Zones per visites",
+          "Activitats al aire lliure"
+        ],
+        "es": [
+          "Zonas Comunes",
+          "Salas con Televisión",
+          " Zonas para visitas",
+          "Actividades al aire libre"
+        ]
+      }
     }
   }
 }

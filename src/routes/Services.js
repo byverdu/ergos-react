@@ -11,20 +11,20 @@ export default class Services extends Component {
     this.state = {
       content: this.props.data,
       images: this.props.images,
+      legends: this.props.legends,
       pageName: 'services'
     };
   }
 
-  shouldComponentUpdate( nextProps, nextState ) {
-    return nextProps.data !== this.state.content;
-  }
-
-  componentDidUpdate( nextProps, nextState ) {
-    this.setState({content: nextProps.data})
+  componentWillReceiveProps( nextProps ) {
+    this.setState({
+      content: nextProps.data,
+      legends: nextProps.legends
+    });
   }
 
   render() {
-    const { content, images, pageName } = this.state;
+    const { content, images, pageName, legends } = this.state;
     if( !content ) {
       return (
         <div>
@@ -35,7 +35,7 @@ export default class Services extends Component {
     return (
       <Row>
         <Col xs="12">
-          <ErgosCarousel images={images} pageName={pageName} />
+          <ErgosCarousel images={images} pageName={pageName} legends={legends} />
           { ReactHtmlParser( content )}
         </Col>
       </Row>
