@@ -51,7 +51,7 @@ const getHeaderOptions = ( propsOptionsList ) => {
     ));
   }
 
-  const getImagesDataFor = ( pageName, items, url ) => {
+  const getImagesDataFor = ( pageName, items, url, legends ) => {
     const images = [];
     for ( let counter = 0; counter < items; counter ++ ) {
       const srcUrl = `${url}/${pageName}_${counter}.jpg`;
@@ -59,7 +59,10 @@ const getHeaderOptions = ( propsOptionsList ) => {
       images.push({srcUrl, altAttr});
     }
     return images.map(( item, index ) => (
-      <img key={index} src={item.srcUrl} alt={item.altAttr} />
+      <div key={`div_${index}`}>
+        <img key={`img_${index}`} src={item.srcUrl} alt={item.altAttr} />
+        <p key={`legen_${index}`} className="legend">{legends[index]}</p>
+      </div>
     ));
   };
 

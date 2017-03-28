@@ -60,9 +60,14 @@ export default class App extends Component {
     return this.state.content[ pageProp ][ this.state.selectedOption.value ];
   }
 
+  getImagesForPage( pageProp ) {
+    return this.state.images[ pageProp ].legends[ this.state.selectedOption.value ];
+  }
+
   homeRenderer( images ) {
     const content = this.getContentForPage( 'index' );
-    return <Home data={content} images={images[ 'home' ]} />
+    const legends = this.getImagesForPage( 'home' );
+    return <Home data={content} images={images[ 'home' ]} legends={legends} />
   }
 
   activityRenderer() {

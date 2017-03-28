@@ -164,7 +164,23 @@
   "images": {
     "home": {
       "items": 5,
-      "url": "./media/index"
+      "url": "./media/index",
+      "legends": {
+        "cat": [
+          "Finca amb jardí",
+          "Assolellat tot l´any",
+          "Zones comuns",
+          "Plena Tranqüil·litat",
+          "Activitats al aire lliure"
+        ],
+        "es": [
+          "Finca con jardín",
+          "Soleado todo el año",
+          "Zonas comunes",
+          "Pura Tranquilidad",
+          "Actividades al aire libre"
+        ]
+      }
     },
     "services": {
       "items": 5,

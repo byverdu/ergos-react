@@ -9,16 +9,23 @@ export default class ErgosCarousel extends Component {
 
     this.state = {
       images: this.props.images,
-      pageName: this.props.pageName
+      pageName: this.props.pageName,
+      legends: this.props.legends
     }
+  }
+
+  componentWillReceiveProps( nextProps ) {
+    this.setState({
+      legends: nextProps.legends
+    })
   }
 
   render() {
     const { items, url } = this.state.images;
-    const { pageName } = this.state;
+    const { pageName, legends } = this.state;
     return(
       <Carousel>
-        {getImagesDataFor( pageName, items, url )}
+        {getImagesDataFor( pageName, items, url, legends )}
       </Carousel>
     );
   }
@@ -26,5 +33,6 @@ export default class ErgosCarousel extends Component {
 
 ErgosCarousel.propTypes = {
   images: PropTypes.object.isRequired,
-  pageName: PropTypes.string.isRequired
+  pageName: PropTypes.string.isRequired,
+  legends: PropTypes.array.isRequired
 }
