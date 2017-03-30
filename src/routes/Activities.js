@@ -12,12 +12,10 @@ export default class Activities extends Component {
     };
   }
 
-  shouldComponentUpdate( nextProps, nextState ) {
-    return nextProps.data !== this.state.content;
-  }
-
-  componentDidUpdate( nextProps, nextState ) {
-    this.setState({content: nextProps.data})
+  componentWillReceiveProps( nextProps ) {
+    this.setState({
+      content: nextProps.data
+    });
   }
 
   render() {

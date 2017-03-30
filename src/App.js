@@ -4,13 +4,28 @@ import Footer from './components/footer';
 import Loading from './components/subComponents/loading';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './routes/Home';
 import Activities from './routes/Activities';
 import Services from './routes/Services';
 import Contact from './routes/Contact';
 import Success from './routes/Success';
+
+const renderMergedProps = ( component, ...rest ) => {
+  const finalProps = Object.assign({}, ...rest );
+  return (
+    React.createElement( component, finalProps )
+  );
+}
+
+const PropsRoute = ({ component, ...rest }) => {
+  return (
+    <Route {...rest} render={routeProps => {
+      return renderMergedProps( component, routeProps, rest );
+    }}/>
+  );
+}
 
 export default class App extends Component {
   constructor( props ) {
@@ -110,27 +125,26 @@ export default class App extends Component {
         </Row>
         <Row>
           <Col xs="12">
-            <Route
-              exact
-              path="/"
-              render={this.homeRenderer.bind( this, images )}
-            />
-            <Route
-              path="/activitats"
-              render={this.activityRenderer.bind( this )}
-            />
-            <Route
-              path="/serveis"
-              render={this.servicesRenderer.bind( this, images )}
-            />
-            <Route
-              path="/contacte"
-              render={this.contactRenderer.bind( this )}
-            />
-            <Route
-              path="/success"
-              render={this.successRenderer.bind( this )}
-            />
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={this.homeRenderer.bind( this, images )}
+              />
+              <PropsRoute path='/activitats' component={Activities}  data={this.getContentForPage( 'activities' )} />
+              <Route
+                path="/serveis"
+                render={this.servicesRenderer.bind( this, images )}
+              />
+              <Route
+                path="/contacte"
+                render={this.contactRenderer.bind( this )}
+              />
+              <Route
+                path="/success"
+                render={this.successRenderer.bind( this )}
+              />
+            </Switch>
           </Col>
         </Row>
         <Row>
