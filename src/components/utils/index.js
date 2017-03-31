@@ -16,6 +16,14 @@ const getHeaderLinks = ( propsLinksList ) => {
   ));
 }
 
+const getActivityLinks = ( match, propsLinksList ) => {
+  return propsLinksList.map(( link, index ) => (
+    <Link key={ index } to={ `${match.url}${link.href}` } className="nav-link">
+        { link.text }
+    </Link>
+  ));
+}
+
 const getHeaderOptions = ( propsOptionsList ) => {
     return propsOptionsList.map(( opt, index ) => (
        <Option
@@ -61,13 +69,14 @@ const getHeaderOptions = ( propsOptionsList ) => {
     return images.map(( item, index ) => (
       <div key={`div_${index}`}>
         <img key={`img_${index}`} src={item.srcUrl} alt={item.altAttr} />
-        <p key={`legen_${index}`} className="legend">{legends[index]}</p>
+        <p key={`legen_${index}`} className="legend">{legends[ index ]}</p>
       </div>
     ));
   };
 
 export {
   getHeaderLinks,
+  getActivityLinks,
   getHeaderOptions,
   getFooterListItems,
   getModalItems,

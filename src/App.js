@@ -38,6 +38,7 @@ export default class App extends Component {
       contact: {},
       success: {},
       images: {},
+      activityContent: {},
       selectedOption: {value: ""}
     };
     this.onChildChanged = this.onChildChanged.bind( this );
@@ -51,9 +52,8 @@ export default class App extends Component {
           header: res.data.header,
           content: res.data.content,
           footer: res.data.footer,
-          contact: res.data.contact,
-          success: res.data.success,
           images: res.data.images,
+          activityContent: res.data.activityContent,
           selectedOption: {
             value: res.data.header.selectedOption.value
           }
@@ -85,11 +85,6 @@ export default class App extends Component {
     return <Home data={content} images={images[ 'home' ]} legends={legends} />
   }
 
-  activityRenderer() {
-    const content = this.getContentForPage( 'activities' );
-    return <Activities data={ content } />
-  }
-
   servicesRenderer( images ) {
     const content = this.getContentForPage( 'services' );
     const legends = this.getImagesForPage( 'services' );
@@ -107,7 +102,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { header, footer, images, selectedOption  } = this.state;
+    const { header, footer, images, selectedOption, activityContent  } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -131,7 +126,13 @@ export default class App extends Component {
                 path="/"
                 render={this.homeRenderer.bind( this, images )}
               />
-              <PropsRoute path='/activitats' component={Activities}  data={this.getContentForPage( 'activities' )} />
+              <PropsRoute
+                path='/activitats'
+                component={Activities}
+                data={this.getContentForPage( 'activities' )}
+                activityContent={activityContent}
+                lang={selectedOption.value}
+              />
               <Route
                 path="/serveis"
                 render={this.servicesRenderer.bind( this, images )}
