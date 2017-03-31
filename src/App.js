@@ -4,28 +4,13 @@ import Footer from './components/footer';
 import Loading from './components/subComponents/loading';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import Home from './routes/Home';
 import Activities from './routes/Activities';
 import Services from './routes/Services';
 import Contact from './routes/Contact';
 import Success from './routes/Success';
-
-const renderMergedProps = ( component, ...rest ) => {
-  const finalProps = Object.assign({}, ...rest );
-  return (
-    React.createElement( component, finalProps )
-  );
-}
-
-const PropsRoute = ({ component, ...rest }) => {
-  return (
-    <Route {...rest} render={routeProps => {
-      return renderMergedProps( component, routeProps, rest );
-    }}/>
-  );
-}
 
 export default class App extends Component {
   constructor( props ) {
@@ -101,6 +86,17 @@ export default class App extends Component {
     return <Success data={ content } />
   }
 
+  activityRenderer( langType, routeProps ) {
+    return this.state.selectedOption.value === langType.text
+    ? <Activities
+        {...routeProps}
+        data={this.getContentForPage( 'activities' )}
+        activityContent={this.state.activityContent}
+        lang={this.state.selectedOption.value}
+      />
+    : <Redirect to={`${langType.url.pathname}`} />
+  }
+
   render() {
     const { header, footer, images, selectedOption, activityContent  } = this.state;
     if( !this.state.header.title ) {
@@ -126,13 +122,22 @@ export default class App extends Component {
                 path="/"
                 render={this.homeRenderer.bind( this, images )}
               />
-              <PropsRoute
+              <Route
                 path='/activitats'
-                component={Activities}
-                data={this.getContentForPage( 'activities' )}
-                activityContent={activityContent}
-                lang={selectedOption.value}
+                render={this.activityRenderer.bind(
+                  this,
+                  {text: 'cat', url: {pathname: '/actividades'}}
+                )}
               />
+
+              <Route
+                path='/actividades'
+                render={this.activityRenderer.bind(
+                  this,
+                  {text: 'es', url: {pathname: '/activitats'}}
+                )}
+              />
+
               <Route
                 path="/serveis"
                 render={this.servicesRenderer.bind( this, images )}
