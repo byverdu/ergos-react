@@ -12,6 +12,8 @@ import Services from './routes/Services';
 import Contact from './routes/Contact';
 import Success from './routes/Success';
 
+import * as Renderer from './components/utils/renderers';
+
 export default class App extends Component {
   constructor( props ) {
     super( props )
@@ -76,29 +78,20 @@ export default class App extends Component {
     return <Services data={ content } images={images[ 'services' ]} legends={legends}/>
   }
 
-  contactRenderer() {
-    const content = this.getContentForPage( 'contact' );
-    return <Contact data={ content } />
-  }
-
-  successRenderer() {
-    const content = this.getContentForPage( 'success' );
-    return <Success data={ content } />
-  }
-
-  activityRenderer( langType, routeProps ) {
-    return this.state.selectedOption.value === langType.text
+  activityRenderer( langConf, routeProps ) {
+    const lang = this.state.selectedOption.value;
+    return lang === langConf.text
     ? <Activities
         {...routeProps}
         data={this.getContentForPage( 'activities' )}
         activityContent={this.state.activityContent}
-        lang={this.state.selectedOption.value}
+        lang={lang}
       />
-    : <Redirect to={`${langType.url.pathname}`} />
+    : <Redirect to={`${langConf.url.pathname}`} />
   }
 
   render() {
-    const { header, footer, images, selectedOption, activityContent  } = this.state;
+    const { header, footer, images, selectedOption, activityContent, content  } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -144,11 +137,21 @@ export default class App extends Component {
               />
               <Route
                 path="/contacte"
-                render={this.contactRenderer.bind( this )}
+                render={Renderer.contentForComponent.bind(
+                  this,
+                  'contact',
+                  content,
+                  selectedOption.value
+                )}
               />
               <Route
                 path="/success"
-                render={this.successRenderer.bind( this )}
+                render={Renderer.contentForComponent.bind(
+                  this,
+                  'success',
+                  content,
+                  selectedOption.value
+                )}
               />
             </Switch>
           </Col>
