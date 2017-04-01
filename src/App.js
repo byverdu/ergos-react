@@ -9,8 +9,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Home from './routes/Home';
 import Activities from './routes/Activities';
 import Services from './routes/Services';
-import Contact from './routes/Contact';
-import Success from './routes/Success';
 
 import * as Renderer from './components/utils/renderers';
 
@@ -136,21 +134,43 @@ export default class App extends Component {
                 render={this.servicesRenderer.bind( this, images )}
               />
               <Route
-                path="/contacte"
+                path="/ergos-contacte"
                 render={Renderer.contentForComponent.bind(
                   this,
                   'contact',
                   content,
-                  selectedOption.value
+                  selectedOption.value,
+                  {text: 'cat', url: {pathname: '/ergos-contacto'}}
                 )}
               />
               <Route
-                path="/success"
+                path="/ergos-contacto"
+                render={Renderer.contentForComponent.bind(
+                  this,
+                  'contact',
+                  content,
+                  selectedOption.value,
+                  {text: 'es', url: {pathname: '/ergos-contacte'}}
+                )}
+              />
+              <Route
+                path="/missatge-enviat"
                 render={Renderer.contentForComponent.bind(
                   this,
                   'success',
                   content,
-                  selectedOption.value
+                  selectedOption.value,
+                  {text: 'cat', url: {pathname: '/mensaje-enviado'}}
+                )}
+              />
+              <Route
+                path="/mensaje-enviado"
+                render={Renderer.contentForComponent.bind(
+                  this,
+                  'success',
+                  content,
+                  selectedOption.value,
+                  {text: 'es', url: {pathname: '/missatge-enviat'}}
                 )}
               />
             </Switch>
