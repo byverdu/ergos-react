@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
 import Loading from '../components/subComponents/loading';
-import Map from '../components/map';
+import ErgosMap from '../components/map';
 
 export default class Contact extends Component {
   constructor( props ) {
@@ -62,7 +62,7 @@ export default class Contact extends Component {
           <Col xs="12">
             <h1>{title}</h1>
             <p>{address}</p>
-            <Map />
+            <ErgosMap />
             <a href="https://www.google.es/maps/dir//Carrer+de+Pomaret,+25,+08017+Barcelona/@41.404459,2.1216827,17z/data=!4m16!1m7!3m6!1s0x12a4983e4bf1325b:0xbd8605a8efe44a50!2sCarrer+de+Pomaret,+25,+08017+Barcelona!3b1!8m2!3d41.404459!4d2.1238714!4m7!1m0!1m5!1m1!1s0x12a4983e4bf1325b:0xbd8605a8efe44a50!2m2!1d2.1238714!2d41.404459?hl=es" target="_blank">{route}</a>
             { this.renderTransport( transport ) }
           </Col>

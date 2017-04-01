@@ -21,21 +21,28 @@ const markerOptions = ( googleMaps, map ) => {
 };
 
 export default class ErgosMap extends Component {
+  componentWillUnmount() {
+    const allScripts = document.getElementsByTagName( 'script' );
+    [].filter.call(
+      allScripts,
+      ( scpt ) => scpt.src.indexOf( 'key=AIzaSyDE2XTOO3mc5CnZSdVG0xVfs8L9DidM__0' ) >= 0
+    )[ 0 ].remove();
+    window.google = {};
+  }
   componentDidMount() {
     loadGoogleMapsAPI( Map.API_CONFIG ).then( googleMaps => {
-      this.map = new googleMaps.Map( this.refs.map, mapOptions );
+      const maps = new googleMaps.Map( this.refs.map, mapOptions );
 
       const newStyleMap = new googleMaps.StyledMapType( Map.STYLES, {name: 'Retro'});
-      const marker = new googleMaps.Marker( markerOptions( googleMaps, this.map ));
+      const marker = new googleMaps.Marker( markerOptions( googleMaps, maps ));
 
-      this.map.mapTypes.set( 'Retro', newStyleMap );
-      this.map.setMapTypeId( 'Retro' );
+      maps.mapTypes.set( 'Retro', newStyleMap );
+      maps.setMapTypeId( 'Retro' );
 
       Map.resetMarkerAnimation( marker );
 
     }).catch( err => {
-      console.error( err );
-      this.map = 'Something went wrong loading the map'
+      console.warning( 'Something went wrong loading the map', err );
     });
   }
 
