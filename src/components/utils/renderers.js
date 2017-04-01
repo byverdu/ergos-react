@@ -8,19 +8,37 @@ import Success from '../../routes/Success';
 
 const mappedComponents = {
   contact: Contact,
-  success: Success
+  success: Success,
+  home: Home
 }
 
-const contentForComponent = ( componentName, content, langValue, langConfig ) => {
+const homeComponent = ( componentName, data, langValue ) => {
+  const TempComponent = mappedComponents[ componentName ];
+  const props = {
+    content: data[ componentName ][ "content" ][ langValue ],
+    images: data[ componentName ][ "images" ],
+    legends: data[ componentName ][ "images" ][ "legends" ][ langValue ]
+  }
 
-  const props = content[ componentName ][ langValue ];
+  return ( <TempComponent data={props} /> );
+}
+
+
+const commonComponent = ( componentName, data, langValue, langConfig, extraProps ) => {
+
+  const props = data[ "content" ][ componentName ][ langValue ];
   const TempComponent = mappedComponents[ componentName ];
 
-    return langValue === langConfig.text
+  if ( extraProps ) {
+    Object.assign( props, extraProps );
+  }
+
+  return langValue === langConfig.text
     ? ( <TempComponent data={props} /> )
     : ( <Redirect to={`${langConfig.url.pathname}`} /> )
 }
 
 export {
-  contentForComponent
+  homeComponent,
+  commonComponent
 }

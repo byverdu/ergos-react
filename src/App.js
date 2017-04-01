@@ -6,7 +6,6 @@ import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
-import Home from './routes/Home';
 import Activities from './routes/Activities';
 import Services from './routes/Services';
 
@@ -18,11 +17,10 @@ export default class App extends Component {
 
     this.state = {
       header: {},
-      content: {},
+      data: {},
       footer: {},
       contact: {},
       success: {},
-      images: {},
       activityContent: {},
       selectedOption: {value: ""}
     };
@@ -35,9 +33,8 @@ export default class App extends Component {
         console.log( res.data );
         const responseData = {
           header: res.data.header,
-          content: res.data.content,
+          data: res.data.data,
           footer: res.data.footer,
-          images: res.data.images,
           activityContent: res.data.activityContent,
           selectedOption: {
             value: res.data.header.selectedOption.value
@@ -54,20 +51,6 @@ export default class App extends Component {
         value: event.target.value
       }
     });
-  }
-
-  getContentForPage( pageProp ) {
-    return this.state.content[ pageProp ][ this.state.selectedOption.value ];
-  }
-
-  getImagesForPage( pageProp ) {
-    return this.state.images[ pageProp ].legends[ this.state.selectedOption.value ];
-  }
-
-  homeRenderer( images ) {
-    const content = this.getContentForPage( 'index' );
-    const legends = this.getImagesForPage( 'home' );
-    return <Home data={content} images={images[ 'home' ]} legends={legends} />
   }
 
   servicesRenderer( images ) {
@@ -89,7 +72,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { header, footer, images, selectedOption, activityContent, content  } = this.state;
+    const { header, footer, images, selectedOption, activityContent, data  } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -111,7 +94,12 @@ export default class App extends Component {
               <Route
                 exact
                 path="/"
-                render={this.homeRenderer.bind( this, images )}
+                render={Renderer.homeComponent.bind(
+                  this,
+                  'home',
+                  data,
+                  selectedOption.value
+                )}
               />
               <Route
                 path='/activitats'
@@ -135,40 +123,40 @@ export default class App extends Component {
               />
               <Route
                 path="/ergos-contacte"
-                render={Renderer.contentForComponent.bind(
+                render={Renderer.commonComponent.bind(
                   this,
                   'contact',
-                  content,
+                  data,
                   selectedOption.value,
                   {text: 'cat', url: {pathname: '/ergos-contacto'}}
                 )}
               />
               <Route
                 path="/ergos-contacto"
-                render={Renderer.contentForComponent.bind(
+                render={Renderer.commonComponent.bind(
                   this,
                   'contact',
-                  content,
+                  data,
                   selectedOption.value,
                   {text: 'es', url: {pathname: '/ergos-contacte'}}
                 )}
               />
               <Route
                 path="/missatge-enviat"
-                render={Renderer.contentForComponent.bind(
+                render={Renderer.commonComponent.bind(
                   this,
                   'success',
-                  content,
+                  data,
                   selectedOption.value,
                   {text: 'cat', url: {pathname: '/mensaje-enviado'}}
                 )}
               />
               <Route
                 path="/mensaje-enviado"
-                render={Renderer.contentForComponent.bind(
+                render={Renderer.commonComponent.bind(
                   this,
                   'success',
-                  content,
+                  data,
                   selectedOption.value,
                   {text: 'es', url: {pathname: '/missatge-enviat'}}
                 )}

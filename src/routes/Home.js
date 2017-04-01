@@ -9,17 +9,17 @@ export default class Home extends Component {
     super( props )
 
     this.state = {
-      content: this.props.data,
-      images: this.props.images,
-      legends: this.props.legends,
+      content: this.props.data.content,
+      images: this.props.data.images,
+      legends: this.props.data.legends,
       pageName: 'home'
     };
   }
 
   componentWillReceiveProps( nextProps ) {
     this.setState({
-      content: nextProps.data,
-      legends: nextProps.legends
+      content: nextProps.data.content,
+      legends: nextProps.data.legends
     });
   }
 
@@ -44,10 +44,15 @@ export default class Home extends Component {
 }
 
 Home.propTypes = {
-  data: PropTypes.string.isRequired,
-  images: PropTypes.shape({
-    items: PropTypes.number,
-    url: PropTypes.string
-  }).isRequired,
-  legends: PropTypes.array.isRequired
+  data: PropTypes.shape({
+    content: PropTypes.string,
+    images: PropTypes.shape({
+      items: PropTypes.number,
+      url: PropTypes.string
+    }).isRequired,
+    legends: PropTypes.array.isRequired
+  })
+
+
+
 }

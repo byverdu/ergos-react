@@ -105,10 +105,32 @@
 			}
 		}
 	},
-	"content": {
-		"index": {
-			"cat": "<h1>Qui Som?</h1><p><strong>Residència Ergos</strong> ès una llar assistencial per a persones grans que necessiten un permanent suport sanitari i psicològic.</p><p>Està situada en un lloc ideal per a un centre d´aquestes característiques, en el barri més tranquil i a la vegada ben comunicat de <strong>Barcelona, Sarrià</strong></p><p>L´ampli edifici disposa de més de <strong>1.300 metres quadrats</strong> en tres plantes comunicades per ascensor, sense barreres arquitectòniques i envoltat d´un ampli i assolellat jardí.</p>",
-			"es": "<h1>¿QUIÉN SOMOS?</h1><p>La <strong>Residencia Ergos</strong> es una residencia asistencial para personas mayores que precisan de un soporte sanitario, asistencial y psicológico permanente.</p><p>Situada en Sarriá, el barrio más tranquilo y mejor comunicado de la ciudad, Residencia Ergos tiene una ubicación ideal para un centro de estas características</p><p>El amplio edificio dispone de más de <strong>1.300 metres quadrats</strong> en tres plantas comunicadas por ascensor, sin barreras y rodeado por un amplio y soleado jardín.</p>"
+	"data": {
+		"home": {
+      "content": {
+        "cat": "<h1>Qui Som?</h1><p><strong>Residència Ergos</strong> ès una llar assistencial per a persones grans que necessiten un permanent suport sanitari i psicològic.</p><p>Està situada en un lloc ideal per a un centre d´aquestes característiques, en el barri més tranquil i a la vegada ben comunicat de <strong>Barcelona, Sarrià</strong></p><p>L´ampli edifici disposa de més de <strong>1.300 metres quadrats</strong> en tres plantes comunicades per ascensor, sense barreres arquitectòniques i envoltat d´un ampli i assolellat jardí.</p>",
+  			"es": "<h1>¿QUIÉN SOMOS?</h1><p>La <strong>Residencia Ergos</strong> es una residencia asistencial para personas mayores que precisan de un soporte sanitario, asistencial y psicológico permanente.</p><p>Situada en Sarriá, el barrio más tranquilo y mejor comunicado de la ciudad, Residencia Ergos tiene una ubicación ideal para un centro de estas características</p><p>El amplio edificio dispone de más de <strong>1.300 metres quadrats</strong> en tres plantas comunicadas por ascensor, sin barreras y rodeado por un amplio y soleado jardín.</p>"
+      },
+      "images": {
+          "items": 5,
+          "url": "./media/index",
+          "legends": {
+            "cat": [
+              "Finca amb jardí",
+              "Assolellat tot l´any",
+              "Zones comuns",
+              "Plena Tranqüil·litat",
+              "Activitats al aire lliure"
+            ],
+            "es": [
+              "Finca con jardín",
+              "Soleado todo el año",
+              "Zonas comunes",
+              "Pura Tranquilidad",
+              "Actividades al aire libre"
+            ]
+        }
+      }
 		},
 		"activities": {
 			"cat": "<p> L´ atenció psicològica dels residents té com objectiu proporcionar un programa d´ activitats <strong> per conservar i estimular les capacitats cognitives i psicomotores </strong>.</p> <p> Aquest programa conté diverses activitats adaptades a les característiques i situació individual de cada resident: </p><ul><li>Fisioterapia i grups de gimnàsia</li> <li> Psicomotricitat </li><li>Estimulació del llenguatge</li> <li> Tallers d `atenció i memòria</li><li>Tallers de psicoteràpia</li></ul><ul><li>Zooteràpia</li><li>Tallers de cuina</li><li>Programa de voluntariat</li><li>Musicoteràpia i activitats musicals</li><li>Activitats Lúdiques</li><li>Projecte intergeneracional</li></ul><h3>Mira alguna de les nostres Activitats</h3>",
@@ -116,91 +138,75 @@
 		},
 		"services": {
 			"cat": "<p><strong>Residència Ergos</strong> compta amb un equip de professionals de gran experiència i qualificació per atendre a persones amb un <strong>alt nivell de dependència</strong>.</p><p>Proporcionem atenció mèdica i psicològica continuades, fisioteràpia i rehabilitació, medicació i dietes adequades a cada patologia. Activitats lúdiques i totes les atencions pròpies de les <strong>necessitats bàsiques de les persones grans</strong> amb la finalitat d`aconseguir el màxim benestar individual i col· lectiu. </p><ul><li>Residència assistida</li> <li> Atenció mèdica </li><li>Atenció psicològica</li> <li> Fisioteràpia i grups de gimnàsia </li><li>Perruqueria i podologia</li> <li> Gerocultors / res les 24 hores </li><li>Cuina pròpia i menjar casolà</li> <li> Dietes especials </li></ul> <ul> <li> Bugaderia i planxat de la roba </li><li>Possibilitat de menjar amb el resident</li> <li> Activitats lúdiques i manualitats </li><li>Espais de convivència i reunió</li> <li> Sales de TV </li><li>Sessions de cinema</li> <li> Horaris lliures de visita </li><li>Tramitació de la medicació per la S.S.</li><li>Atenció dental al centre</li></ul>",
-			"es": "<p><strong>Residencia Ergos</strong> cuenta con un equipo de profesionales de contrastada experiencia y cualificación para atender a personas aquejadas de un <strong>alto nivel de dependencia</strong>.</p><p>Proporcionamos atención médica y psicológica continuada, fisioterapia y rehabilitación, medicación y dietas adecuadas a cada patología.  Actividades lúdicas y todas las atenciones propias de las <strong>necesidades básicas de la gente mayor</strong> con la finalidad de conseguir su máximo bienestar individual y colectivo.</p><ul><li>Residencia assistida</li><li>Atención medica</li><li>Atención psicológica</li><li>Fisioterapia y grupos de gimnasia</li><li>Peluqueria y podología</li><li>Gerocultores las 24 horas</li><li>Cocina propia con comida casera</li><li>Dietas especials</li></ul><ul><li>Lavandería y planchado de la ropa</li><li>Posibilidad de comer con el residente</li><li>Actividades lúdicas y manuales</li><li>Espacios de convivencia y reunión</li><li>Salas de TV</li><li>Sesiones de cine</li><li>Horarios libres de visita</li><li>Tramitación de la medicación por la S.S.</li><li>Atención dental en el centre</li></ul>"
+			"es": "<p><strong>Residencia Ergos</strong> cuenta con un equipo de profesionales de contrastada experiencia y cualificación para atender a personas aquejadas de un <strong>alto nivel de dependencia</strong>.</p><p>Proporcionamos atención médica y psicológica continuada, fisioterapia y rehabilitación, medicación y dietas adecuadas a cada patología.  Actividades lúdicas y todas las atenciones propias de las <strong>necesidades básicas de la gente mayor</strong> con la finalidad de conseguir su máximo bienestar individual y colectivo.</p><ul><li>Residencia assistida</li><li>Atención medica</li><li>Atención psicológica</li><li>Fisioterapia y grupos de gimnasia</li><li>Peluqueria y podología</li><li>Gerocultores las 24 horas</li><li>Cocina propia con comida casera</li><li>Dietas especials</li></ul><ul><li>Lavandería y planchado de la ropa</li><li>Posibilidad de comer con el residente</li><li>Actividades lúdicas y manuales</li><li>Espacios de convivencia y reunión</li><li>Salas de TV</li><li>Sesiones de cine</li><li>Horarios libres de visita</li><li>Tramitación de la medicación por la S.S.</li><li>Atención dental en el centre</li></ul>",
+      "images": {
+        "services": {
+          "items": 5,
+          "url": "./media/services",
+          "legends": {
+            "cat": [
+              "Zones Comuns",
+              "Sales amb Televisió",
+              " Zones per visites",
+              "Activitats al aire lliure"
+            ],
+            "es": [
+              "Zonas Comunes",
+              "Salas con Televisión",
+              " Zonas para visitas",
+              "Actividades al aire libre"
+            ]
+          }
+        }
+      }
 		},
     "contact": {
-  		"cat": {
-  			"name": "Nom",
-  			"telephone": "Telèfon",
-  			"email": "Correu electrònic",
-  			"message": "Missatge",
-        "title": "LOCALITZACIÓ",
-  			"address": "Estem al carrer Pomaret nº 25",
-        "transport": [
-          "Com arribar-hi:",
-          "Ferrocarrils: L6, S5, S55, S1, S2",
-          "Bus: 60, 75, H4, 123, V11, 70, V7, 68, 66",
-          "Cotxe: Entrada per carrer Iradier i carrer de Margenat"
-        ],
-        "route": "Calcula la teva ruta a Google Maps"
-  		},
-  		"es": {
-  			"name": "Nombre",
-  			"telephone": "Teléfono",
-  			"email": "Correo electrónico",
-  			"message": "Mensaje",
-        "title": "LOCALIZACIÓN",
-  			"address": "Estamos en la calle Pomaret nº 25",
-        "transport": [
-          "Como llegar:",
-          "Ferrocarriles: L6, S5, S55, S1, S2",
-          "Bus: 60, 75, H4, 123, V11, 70, V7, 68, 66",
-          "Coche: Entrada por la calle Iradier y la calle Margenat"
-        ],
-        "route": "Calcule su ruta a Google Maps"
-  		}
-  	},
-    "success": {
-  		"cat": {
-        "message": "<h3>El seu missatge ha sigut envïat amb exit.<br>En breu ens possarem en contacte.</h3>",
-        "progress": "Seràs redirigit a Inici en"
+      "content": {
+        "cat": {
+    			"name": "Nom",
+    			"telephone": "Telèfon",
+    			"email": "Correu electrònic",
+    			"message": "Missatge",
+          "title": "LOCALITZACIÓ",
+    			"address": "Estem al carrer Pomaret nº 25",
+          "transport": [
+            "Com arribar-hi:",
+            "Ferrocarrils: L6, S5, S55, S1, S2",
+            "Bus: 60, 75, H4, 123, V11, 70, V7, 68, 66",
+            "Cotxe: Entrada per carrer Iradier i carrer de Margenat"
+          ],
+          "route": "Calcula la teva ruta a Google Maps"
+    		},
+    		"es": {
+    			"name": "Nombre",
+    			"telephone": "Teléfono",
+    			"email": "Correo electrónico",
+    			"message": "Mensaje",
+          "title": "LOCALIZACIÓN",
+    			"address": "Estamos en la calle Pomaret nº 25",
+          "transport": [
+            "Como llegar:",
+            "Ferrocarriles: L6, S5, S55, S1, S2",
+            "Bus: 60, 75, H4, 123, V11, 70, V7, 68, 66",
+            "Coche: Entrada por la calle Iradier y la calle Margenat"
+          ],
+          "route": "Calcule su ruta a Google Maps"
+    		}
+    	}
       },
-      "es": {
-        "message": "<h3>Su mensaje ha sido enviado con éxito.<br>En breve nos pondremos en contacto.</h3>",
-        "progress": "Serás redirigido a Inicio en"
+    "success": {
+      "content": {
+        "cat": {
+          "message": "<h3>El seu missatge ha sigut envïat amb exit.<br>En breu ens possarem en contacte.</h3>",
+          "progress": "Seràs redirigit a Inici en"
+        },
+        "es": {
+          "message": "<h3>Su mensaje ha sido enviado con éxito.<br>En breve nos pondremos en contacto.</h3>",
+          "progress": "Serás redirigido a Inicio en"
+        }
       }
   	}
 	},
-  "images": {
-    "home": {
-      "items": 5,
-      "url": "./media/index",
-      "legends": {
-        "cat": [
-          "Finca amb jardí",
-          "Assolellat tot l´any",
-          "Zones comuns",
-          "Plena Tranqüil·litat",
-          "Activitats al aire lliure"
-        ],
-        "es": [
-          "Finca con jardín",
-          "Soleado todo el año",
-          "Zonas comunes",
-          "Pura Tranquilidad",
-          "Actividades al aire libre"
-        ]
-      }
-    },
-    "services": {
-      "items": 5,
-      "url": "./media/services",
-      "legends": {
-        "cat": [
-          "Zones Comuns",
-          "Sales amb Televisió",
-          " Zones per visites",
-          "Activitats al aire lliure"
-        ],
-        "es": [
-          "Zonas Comunes",
-          "Salas con Televisión",
-          " Zonas para visitas",
-          "Actividades al aire libre"
-        ]
-      }
-    }
-  },
   "activityContent" :{
   	"linksList": {
   		"cat": [{
