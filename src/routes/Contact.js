@@ -8,16 +8,14 @@ export default class Contact extends Component {
     super( props )
 
     this.state = {
-      content: this.props.data
+      content: this.props.data.content
     };
   }
 
-  shouldComponentUpdate( nextProps, nextState ) {
-    return nextProps.data !== this.state.content;
-  }
-
-  componentDidUpdate( nextProps, nextState ) {
-    this.setState({content: nextProps.data})
+  componentWillReceiveProps( nextProps ) {
+    this.setState({
+      content: nextProps.data.content
+    });
   }
 
   renderTransport( transport ) {

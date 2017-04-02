@@ -8,15 +8,19 @@ export default class Success extends Component {
     super( props )
 
     this.state = {
-      content: this.props.data,
+      content: this.props.data.content,
       counter: 0,
       intervalId: 0,
-      timer: 60
+      timer: 30
     };
   }
 
+  shouldComponentUpdate( nextProps, nextState ) {
+    return false;
+  }
+
   componentDidUpdate( nextProps, nextState ) {
-    this.setState({content: nextProps.data})
+    this.setState({content: nextProps.data.content})
   }
 
   componentDidMount() {
@@ -30,10 +34,10 @@ export default class Success extends Component {
 
   setTimer() {
     this.setState({
-      counter: this.state.counter + 1.6666667,
+      counter: this.state.counter + 3.333334,
       timer: this.state.timer - 1
     });
-    if ( this.state.timer < 0 ) {
+    if ( this.state.timer === 0 ) {
       // not best solution
       window.location = '/';
     }
