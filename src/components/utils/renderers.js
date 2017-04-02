@@ -10,7 +10,8 @@ const mappedComponents = {
   contact: Contact,
   success: Success,
   home: Home,
-  services: Services
+  services: Services,
+  activities: Activities
 }
 
 const propsForImages = ( componentName, data, langValue ) => {
@@ -31,7 +32,6 @@ const homeComponent = ( componentName, data, langValue ) => {
   return ( <TempComponent data={props} /> );
 }
 
-
 const commonComponent = ( componentName, data, langValue, langConfig, imgProps ) => {
 
   const props = {
@@ -48,8 +48,24 @@ const commonComponent = ( componentName, data, langValue, langConfig, imgProps )
     : ( <Redirect to={`${langConfig.url.pathname}`} /> )
 }
 
+const activityComponent = ( componentName, data, langValue, activityContent, langConfig, routeProps ) => {
+  const props = {
+    content: data[ componentName ][ "content" ][ langValue ],
+    activityContent,
+    langValue
+  };
+  const TempComponent = mappedComponents[ componentName ];
+
+  return langValue === langConfig.text
+    ? ( <TempComponent
+          {...routeProps}
+          data={props}
+      /> )
+    : ( <Redirect to={`${langConfig.url.pathname}`} /> )
+}
+
 export {
   homeComponent,
   commonComponent,
-  propsForImages
+  activityComponent
 }

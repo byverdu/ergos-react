@@ -4,10 +4,8 @@ import Footer from './components/footer';
 import Loading from './components/subComponents/loading';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import * as Renderer from './components/utils/renderers';
-
-import Activities from './routes/Activities';
 
 export default class App extends Component {
   constructor( props ) {
@@ -51,18 +49,6 @@ export default class App extends Component {
     });
   }
 
-  activityRenderer( langConf, routeProps ) {
-    const lang = this.state.selectedOption.value;
-    return lang === langConf.text
-    ? <Activities
-        {...routeProps}
-        data={this.getContentForPage( 'activities' )}
-        activityContent={this.state.activityContent}
-        lang={lang}
-      />
-    : <Redirect to={`${langConf.url.pathname}`} />
-  }
-
   render() {
     const { header, footer, selectedOption, activityContent, data  } = this.state;
     if( !this.state.header.title ) {
@@ -93,18 +79,27 @@ export default class App extends Component {
                   selectedOption.value
                 )}
               />
+
               <Route
-                path='/activitats'
-                render={this.activityRenderer.bind(
+                path="/activitats"
+                render={Renderer.activityComponent.bind(
                   this,
+                  'activities',
+                  data,
+                  selectedOption.value,
+                  activityContent,
                   {text: 'cat', url: {pathname: '/actividades'}}
                 )}
               />
 
               <Route
-                path='/actividades'
-                render={this.activityRenderer.bind(
+                path="/actividades"
+                render={Renderer.activityComponent.bind(
                   this,
+                  'activities',
+                  data,
+                  selectedOption.value,
+                  activityContent,
                   {text: 'es', url: {pathname: '/activitats'}}
                 )}
               />

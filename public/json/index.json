@@ -133,8 +133,10 @@
       }
 		},
 		"activities": {
-			"cat": "<p> L´ atenció psicològica dels residents té com objectiu proporcionar un programa d´ activitats <strong> per conservar i estimular les capacitats cognitives i psicomotores </strong>.</p> <p> Aquest programa conté diverses activitats adaptades a les característiques i situació individual de cada resident: </p><ul><li>Fisioterapia i grups de gimnàsia</li> <li> Psicomotricitat </li><li>Estimulació del llenguatge</li> <li> Tallers d `atenció i memòria</li><li>Tallers de psicoteràpia</li></ul><ul><li>Zooteràpia</li><li>Tallers de cuina</li><li>Programa de voluntariat</li><li>Musicoteràpia i activitats musicals</li><li>Activitats Lúdiques</li><li>Projecte intergeneracional</li></ul><h3>Mira alguna de les nostres Activitats</h3>",
-			"es": "<p>La atención psicológica de los residentes tiene como objetivo proporcionar un programa de actividades <strong>para conservar y estimular las capacidades cognitivas y psicomotrices</strong>.</p><p>Este programa contiene diversas actividades adaptadas a las características y situación individual de cada uno de los residentes:</p><ul><li>Fisioterapia y grupos de gimnasia</li><li>Psicomotricidad</li><li>Estimulación del lenguaje</li><li>Talleres de atención y memória</li><li>Talleres de psicoterapia</li></ul><ul><li>Zooterapia</li><li>Talleres de cocina</li><li>Programa de voluntariado</li><li>Musicoterapia y actividades musicales</li><li>Actividades Lúdicas</li><li>Proyecto intergeneracional</li></ul><h3>Mira alguna de nuestras Actividades</h3>"
+      "content": {
+        "cat": "<p> L´ atenció psicològica dels residents té com objectiu proporcionar un programa d´ activitats <strong> per conservar i estimular les capacitats cognitives i psicomotores </strong>.</p> <p> Aquest programa conté diverses activitats adaptades a les característiques i situació individual de cada resident: </p><ul><li>Fisioterapia i grups de gimnàsia</li> <li> Psicomotricitat </li><li>Estimulació del llenguatge</li> <li> Tallers d `atenció i memòria</li><li>Tallers de psicoteràpia</li></ul><ul><li>Zooteràpia</li><li>Tallers de cuina</li><li>Programa de voluntariat</li><li>Musicoteràpia i activitats musicals</li><li>Activitats Lúdiques</li><li>Projecte intergeneracional</li></ul><h3>Mira alguna de les nostres Activitats</h3>",
+        "es": "<p>La atención psicológica de los residentes tiene como objetivo proporcionar un programa de actividades <strong>para conservar y estimular las capacidades cognitivas y psicomotrices</strong>.</p><p>Este programa contiene diversas actividades adaptadas a las características y situación individual de cada uno de los residentes:</p><ul><li>Fisioterapia y grupos de gimnasia</li><li>Psicomotricidad</li><li>Estimulación del lenguaje</li><li>Talleres de atención y memória</li><li>Talleres de psicoterapia</li></ul><ul><li>Zooterapia</li><li>Talleres de cocina</li><li>Programa de voluntariado</li><li>Musicoterapia y actividades musicales</li><li>Actividades Lúdicas</li><li>Proyecto intergeneracional</li></ul><h3>Mira alguna de nuestras Actividades</h3>"
+      }
 		},
 		"services": {
       "content": {
@@ -220,10 +222,10 @@
   			"text": "Programa Intergeneracional"
   		}],
   		"es": [{
-  			"href": "/ludiques",
+  			"href": "/ludicas",
   			"text": "Actividades Lúdicas"
   		}, {
-  			"href": "/voluntariat",
+  			"href": "/voluntariado",
   			"text": "Programa de Voluntariado"
   		}, {
   			"href": "/intergeneracional",

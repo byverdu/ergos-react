@@ -9,17 +9,17 @@ export default class Activities extends Component {
     super( props )
 
     this.state = {
-      content: this.props.data,
-      activityContent: this.props.activityContent,
-      lang: this.props.lang
+      content: this.props.data.content,
+      activityContent: this.props.data.activityContent,
+      lang: this.props.data.langValue
     };
   }
 
   componentWillReceiveProps( nextProps ) {
     this.setState({
-      content: nextProps.data,
-      activityContent: nextProps.activityContent,
-      lang: nextProps.lang
+      content: nextProps.data.content,
+      activityContent: nextProps.data.activityContent,
+      lang: nextProps.data.langValue
     });
   }
 
