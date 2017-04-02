@@ -4,8 +4,11 @@ import Footer from './components/footer';
 import Loading from './components/subComponents/loading';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import * as Renderer from './components/utils/renderers';
+import createBrowserHistory from 'history/createBrowserHistory'
+
+const history = createBrowserHistory();
 
 export default class App extends Component {
   constructor( props ) {
@@ -59,7 +62,7 @@ export default class App extends Component {
       );
     }
     return (
-      <Router>
+      <Router history={history}>
         <Container fluid className="wrapper">
         <Row>
           <Col xs="12">
