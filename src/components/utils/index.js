@@ -18,7 +18,7 @@ const getHeaderLinks = ( propsLinksList ) => {
 
 const getActivityLinks = ( match, propsLinksList ) => {
   return propsLinksList.map(( link, index ) => (
-    <Link key={ index } to={ `${match.url}${link.href}` } className="nav-link">
+    <Link key={ index } to={ `${match.path}${link.href}` } className="nav-link">
         { link.text }
     </Link>
   ));

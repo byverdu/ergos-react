@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
+
 import { Row, Col } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../components/subComponents/loading';
 import { getActivityLinks } from '../components/utils';
+import * as Renderer from '../components/utils/renderers';
 
 export default class Activities extends Component {
   constructor( props ) {
@@ -29,7 +32,7 @@ export default class Activities extends Component {
   }
 
   render() {
-    const { content } = this.state;
+    const { content, activityContent, lang } = this.state;
     const links = this.createLink();
     if( !content ) {
       return (
@@ -42,10 +45,36 @@ export default class Activities extends Component {
       <Row>
         <Col xs="12">
           { ReactHtmlParser( content )}
-
           {getActivityLinks( this.props.match, links )}
+              <Route
+                path={`${this.props.match.path}/ludiques`}
+                render={Renderer.commonComponent.bind(
+                  this,
+                  'ludicas',
+                  activityContent.data,
+                  lang,
+                  {text: 'cat', url: {pathname: '/actividades/ludicas`'}},
+                  true
+                )}
+              />
+              <Route
+                path={`${this.props.match.path}/ludicas`}
+                render={Renderer.commonComponent.bind(
+                  this,
+                  'ludicas',
+                  activityContent.data,
+                  lang,
+                  {text: 'es', url: {pathname: '/actividades/ludiques`'}},
+                  true
+                )}
+              />
         </Col>
       </Row>
     );
   }
 }
+const Topic = ({ match }) => (
+  <div>
+    <h3>{match.params.topicId}</h3>
+  </div>
+)

@@ -232,14 +232,37 @@
   			"text": "Programa Intergeneracional"
   		}]
   	},
-  	"content": {
+  	"data": {
   		"ludicas": {
-  			"cat": "<h1>Activitats Lùdiques/h1><p>Pretenen donar resposta a diferents necessitats emocionals, funcionals i cognitives.</p>",
-  			"es": "<h1>Activitats Lúdicas/h1><p>Pretenden dar respuesta a diferentes necesidades emocionales, funcionales y cognitivas.</p>"
+        "content": {
+          "cat": "<h1>Activitats Lùdiques</h1><p>Pretenen donar resposta a diferents necessitats emocionals, funcionals i cognitives.</p>",
+          "es": "<h1>Actividades Lúdicas</h1><p>Pretenden dar respuesta a diferentes necesidades emocionales, funcionales y cognitivas.</p>"
+        },
+        "images": {
+            "items": 5,
+            "url": "./media/services",
+            "legends": {
+              "cat": [
+                "Zones Comuns",
+                "Sales amb Televisió",
+                " Zones per visites",
+                "Activitats al aire lliure"
+              ],
+              "es": [
+                "Zonas Comunes",
+                "Salas con Televisión",
+                " Zonas para visitas",
+                "Actividades al aire libre"
+              ]
+            }
+          }
   		},
       "volunt": {
-  			"cat": "<h1>Programa de Voluntariat</h1><p>El voluntariat millora la integració dels residents amb la comunitat i té una funció de suport als residents sense vincles familiars, així com una acció complementària a l’acció familiar.</p><h3>OBJECTIUS</h3><p>En termes generals, el Programa de Voluntariat pretén assolir els següents objectius:</p><ul><li>Millorar la qualitat de vida dels residents.</li><li>Potenciar la sociabilització i les relacions personals.</li><li>Millorar l’autoestima i els sentiments d’utilitat.</li><li>Pal.liar la marginació i aillament social.</li><li>Potenciar la integració amb la comunitat.</li></ul><h3>ACTIVITATS</h3><ul><li>Acompanyament individual fomentant la creació de vincle.</li><li>Taller de Jardineria.</li></ul>",
-  			"es": "<h1>Programa de Voluntariado</h1><p>El voluntariado mejora la integración de los residentes con la comunidad y tiene una función de apoyo a los residentes sin vínculos familiares, así como una acción complementaria a la acción familiar.</p><h3>OBJECTIVOS</h3><p>En términos generales, el Programa de Voluntariado pretende alcanzar los siguientes objetivos:</p><ul><li>Mejorar la calidad de vida de los residentes.</li><li>Potenciar la sociabilización y las relaciones personales.</li><li>Mejorar la autoestima y los sentimientos de utilidad.</li><li>Paliar la marginación y aislamiento social.</li><li>Potenciar la integración con la comunidad.</li></ul><h3>ACTIVIDADES</h3><ul><li>Acompañamiento individual fomentando la creación de vínculo.</li><li>Taller de Jardinería.</li></ul>"
+        "content": {
+          "cat": "<h1>Programa de Voluntariat</h1><p>El voluntariat millora la integració dels residents amb la comunitat i té una funció de suport als residents sense vincles familiars, així com una acció complementària a l’acció familiar.</p><h3>OBJECTIUS</h3><p>En termes generals, el Programa de Voluntariat pretén assolir els següents objectius:</p><ul><li>Millorar la qualitat de vida dels residents.</li><li>Potenciar la sociabilització i les relacions personals.</li><li>Millorar l’autoestima i els sentiments d’utilitat.</li><li>Pal.liar la marginació i aillament social.</li><li>Potenciar la integració amb la comunitat.</li></ul><h3>ACTIVITATS</h3><ul><li>Acompanyament individual fomentant la creació de vincle.</li><li>Taller de Jardineria.</li></ul>",
+    			"es": "<h1>Programa de Voluntariado</h1><p>El voluntariado mejora la integración de los residentes con la comunidad y tiene una función de apoyo a los residentes sin vínculos familiares, así como una acción complementaria a la acción familiar.</p><h3>OBJECTIVOS</h3><p>En términos generales, el Programa de Voluntariado pretende alcanzar los siguientes objetivos:</p><ul><li>Mejorar la calidad de vida de los residentes.</li><li>Potenciar la sociabilización y las relaciones personales.</li><li>Mejorar la autoestima y los sentimientos de utilidad.</li><li>Paliar la marginación y aislamiento social.</li><li>Potenciar la integración con la comunidad.</li></ul><h3>ACTIVIDADES</h3><ul><li>Acompañamiento individual fomentando la creación de vínculo.</li><li>Taller de Jardinería.</li></ul>"
+        }
+
   		},
       "inter": {
   			"cat": "<h1>Programa Intergeneracional</h1><p>El programa intergeneracional uneix a diverses generacions en activitats planificades amb l’objectiu de desenvolupar unes relacions i assolir uns objectius específics. Permeten beneficiar-se i aprendre els uns dels altres. És un vincle d’educació cívica que no nomes afecta a qui participa, sinó que recau a tot el sistema social</p>.<p>Els programes intergeneracionals pretenen fomentar el contacte entre les diferents generacions d'una localitat creant espais reals de convivència. Els beneficis de les activitats o programes intergeneracionals són múltiples tant a nivell individual com col·lectiu.</p>",
