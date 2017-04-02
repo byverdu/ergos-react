@@ -23,7 +23,7 @@
 				"href": "/actividades",
 				"text": "Actividades"
 			}, {
-				"href": "/serveis",
+				"href": "/servicios",
 				"text": "Servicios"
 			}, {
 				"href": "/ergos-contacto",
@@ -137,10 +137,11 @@
 			"es": "<p>La atención psicológica de los residentes tiene como objetivo proporcionar un programa de actividades <strong>para conservar y estimular las capacidades cognitivas y psicomotrices</strong>.</p><p>Este programa contiene diversas actividades adaptadas a las características y situación individual de cada uno de los residentes:</p><ul><li>Fisioterapia y grupos de gimnasia</li><li>Psicomotricidad</li><li>Estimulación del lenguaje</li><li>Talleres de atención y memória</li><li>Talleres de psicoterapia</li></ul><ul><li>Zooterapia</li><li>Talleres de cocina</li><li>Programa de voluntariado</li><li>Musicoterapia y actividades musicales</li><li>Actividades Lúdicas</li><li>Proyecto intergeneracional</li></ul><h3>Mira alguna de nuestras Actividades</h3>"
 		},
 		"services": {
-			"cat": "<p><strong>Residència Ergos</strong> compta amb un equip de professionals de gran experiència i qualificació per atendre a persones amb un <strong>alt nivell de dependència</strong>.</p><p>Proporcionem atenció mèdica i psicològica continuades, fisioteràpia i rehabilitació, medicació i dietes adequades a cada patologia. Activitats lúdiques i totes les atencions pròpies de les <strong>necessitats bàsiques de les persones grans</strong> amb la finalitat d`aconseguir el màxim benestar individual i col· lectiu. </p><ul><li>Residència assistida</li> <li> Atenció mèdica </li><li>Atenció psicològica</li> <li> Fisioteràpia i grups de gimnàsia </li><li>Perruqueria i podologia</li> <li> Gerocultors / res les 24 hores </li><li>Cuina pròpia i menjar casolà</li> <li> Dietes especials </li></ul> <ul> <li> Bugaderia i planxat de la roba </li><li>Possibilitat de menjar amb el resident</li> <li> Activitats lúdiques i manualitats </li><li>Espais de convivència i reunió</li> <li> Sales de TV </li><li>Sessions de cinema</li> <li> Horaris lliures de visita </li><li>Tramitació de la medicació per la S.S.</li><li>Atenció dental al centre</li></ul>",
-			"es": "<p><strong>Residencia Ergos</strong> cuenta con un equipo de profesionales de contrastada experiencia y cualificación para atender a personas aquejadas de un <strong>alto nivel de dependencia</strong>.</p><p>Proporcionamos atención médica y psicológica continuada, fisioterapia y rehabilitación, medicación y dietas adecuadas a cada patología.  Actividades lúdicas y todas las atenciones propias de las <strong>necesidades básicas de la gente mayor</strong> con la finalidad de conseguir su máximo bienestar individual y colectivo.</p><ul><li>Residencia assistida</li><li>Atención medica</li><li>Atención psicológica</li><li>Fisioterapia y grupos de gimnasia</li><li>Peluqueria y podología</li><li>Gerocultores las 24 horas</li><li>Cocina propia con comida casera</li><li>Dietas especials</li></ul><ul><li>Lavandería y planchado de la ropa</li><li>Posibilidad de comer con el residente</li><li>Actividades lúdicas y manuales</li><li>Espacios de convivencia y reunión</li><li>Salas de TV</li><li>Sesiones de cine</li><li>Horarios libres de visita</li><li>Tramitación de la medicación por la S.S.</li><li>Atención dental en el centre</li></ul>",
+      "content": {
+        "cat": "<p><strong>Residència Ergos</strong> compta amb un equip de professionals de gran experiència i qualificació per atendre a persones amb un <strong>alt nivell de dependència</strong>.</p><p>Proporcionem atenció mèdica i psicològica continuades, fisioteràpia i rehabilitació, medicació i dietes adequades a cada patologia. Activitats lúdiques i totes les atencions pròpies de les <strong>necessitats bàsiques de les persones grans</strong> amb la finalitat d`aconseguir el màxim benestar individual i col· lectiu. </p><ul><li>Residència assistida</li> <li> Atenció mèdica </li><li>Atenció psicològica</li> <li> Fisioteràpia i grups de gimnàsia </li><li>Perruqueria i podologia</li> <li> Gerocultors / res les 24 hores </li><li>Cuina pròpia i menjar casolà</li> <li> Dietes especials </li></ul> <ul> <li> Bugaderia i planxat de la roba </li><li>Possibilitat de menjar amb el resident</li> <li> Activitats lúdiques i manualitats </li><li>Espais de convivència i reunió</li> <li> Sales de TV </li><li>Sessions de cinema</li> <li> Horaris lliures de visita </li><li>Tramitació de la medicació per la S.S.</li><li>Atenció dental al centre</li></ul>",
+  			"es": "<p><strong>Residencia Ergos</strong> cuenta con un equipo de profesionales de contrastada experiencia y cualificación para atender a personas aquejadas de un <strong>alto nivel de dependencia</strong>.</p><p>Proporcionamos atención médica y psicológica continuada, fisioterapia y rehabilitación, medicación y dietas adecuadas a cada patología.  Actividades lúdicas y todas las atenciones propias de las <strong>necesidades básicas de la gente mayor</strong> con la finalidad de conseguir su máximo bienestar individual y colectivo.</p><ul><li>Residencia assistida</li><li>Atención medica</li><li>Atención psicológica</li><li>Fisioterapia y grupos de gimnasia</li><li>Peluqueria y podología</li><li>Gerocultores las 24 horas</li><li>Cocina propia con comida casera</li><li>Dietas especials</li></ul><ul><li>Lavandería y planchado de la ropa</li><li>Posibilidad de comer con el residente</li><li>Actividades lúdicas y manuales</li><li>Espacios de convivencia y reunión</li><li>Salas de TV</li><li>Sesiones de cine</li><li>Horarios libres de visita</li><li>Tramitación de la medicación por la S.S.</li><li>Atención dental en el centre</li></ul>"
+      },
       "images": {
-        "services": {
           "items": 5,
           "url": "./media/services",
           "legends": {
@@ -158,7 +159,6 @@
             ]
           }
         }
-      }
 		},
     "contact": {
       "content": {

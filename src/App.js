@@ -5,11 +5,9 @@ import Loading from './components/subComponents/loading';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import * as Renderer from './components/utils/renderers';
 
 import Activities from './routes/Activities';
-import Services from './routes/Services';
-
-import * as Renderer from './components/utils/renderers';
 
 export default class App extends Component {
   constructor( props ) {
@@ -53,12 +51,6 @@ export default class App extends Component {
     });
   }
 
-  servicesRenderer( images ) {
-    const content = this.getContentForPage( 'services' );
-    const legends = this.getImagesForPage( 'services' );
-    return <Services data={ content } images={images[ 'services' ]} legends={legends}/>
-  }
-
   activityRenderer( langConf, routeProps ) {
     const lang = this.state.selectedOption.value;
     return lang === langConf.text
@@ -72,7 +64,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { header, footer, images, selectedOption, activityContent, data  } = this.state;
+    const { header, footer, selectedOption, activityContent, data  } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -119,8 +111,28 @@ export default class App extends Component {
 
               <Route
                 path="/serveis"
-                render={this.servicesRenderer.bind( this, images )}
+                render={Renderer.commonComponent.bind(
+                  this,
+                  'services',
+                  data,
+                  selectedOption.value,
+                  {text: 'cat', url: {pathname: '/servicios'}},
+                  true
+                )}
               />
+
+              <Route
+                path="/servicios"
+                render={Renderer.commonComponent.bind(
+                  this,
+                  'services',
+                  data,
+                  selectedOption.value,
+                  {text: 'es', url: {pathname: '/serveis'}},
+                  true
+                )}
+              />
+
               <Route
                 path="/ergos-contacte"
                 render={Renderer.commonComponent.bind(

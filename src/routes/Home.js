@@ -52,7 +52,4 @@ Home.propTypes = {
     }).isRequired,
     legends: PropTypes.array.isRequired
   })
-
-
-
 }

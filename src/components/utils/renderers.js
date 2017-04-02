@@ -9,28 +9,38 @@ import Success from '../../routes/Success';
 const mappedComponents = {
   contact: Contact,
   success: Success,
-  home: Home
+  home: Home,
+  services: Services
+}
+
+const propsForImages = ( componentName, data, langValue ) => {
+  return {
+    images: data[ componentName ][ "images" ],
+    legends: data[ componentName ][ "images" ][ "legends" ][ langValue ]
+  }
 }
 
 const homeComponent = ( componentName, data, langValue ) => {
   const TempComponent = mappedComponents[ componentName ];
   const props = {
-    content: data[ componentName ][ "content" ][ langValue ],
-    images: data[ componentName ][ "images" ],
-    legends: data[ componentName ][ "images" ][ "legends" ][ langValue ]
-  }
+    content: data[ componentName ][ "content" ][ langValue ]
+  };
+
+  Object.assign( props, propsForImages( componentName, data, langValue ));
 
   return ( <TempComponent data={props} /> );
 }
 
 
-const commonComponent = ( componentName, data, langValue, langConfig, extraProps ) => {
+const commonComponent = ( componentName, data, langValue, langConfig, imgProps ) => {
 
-  const props = data[ "content" ][ componentName ][ langValue ];
+  const props = {
+    content: data[ componentName ][ "content" ][ langValue ]
+  };
   const TempComponent = mappedComponents[ componentName ];
 
-  if ( extraProps ) {
-    Object.assign( props, extraProps );
+  if ( imgProps ) {
+    Object.assign( props, propsForImages( componentName, data, langValue ));
   }
 
   return langValue === langConfig.text
@@ -40,5 +50,6 @@ const commonComponent = ( componentName, data, langValue, langConfig, extraProps
 
 export {
   homeComponent,
-  commonComponent
+  commonComponent,
+  propsForImages
 }
