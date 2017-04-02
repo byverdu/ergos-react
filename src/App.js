@@ -26,6 +26,7 @@ export default class App extends Component {
     this.onChildChanged = this.onChildChanged.bind( this );
     this.servicesComponentParams = this.servicesComponentParams.bind( this );
     this.contactComponentParams = this.contactComponentParams.bind( this );
+    this.successComponentParams = this.successComponentParams.bind( this );
   }
 
   componentDidMount() {
@@ -82,21 +83,22 @@ export default class App extends Component {
     }
   }
 
+  successComponentParams( data, langText, langPath ) {
+    const langValue = this.state.selectedOption.value
+    return {
+      componentName: 'success',
+      data,
+      langValue,
+      langConfig: {
+        text: langText,
+        url: { pathname: langPath }
+      },
+      imgProps: false
+    }
+  }
 
   render() {
     const { header, footer, selectedOption, activityContent, data  } = this.state;
-    const catServices = this.servicesComponentParams(
-      data, 'cat', '/servicios'
-    );
-    const esServices = this.servicesComponentParams(
-      data, 'es', '/serveis'
-    );
-    const catContact = this.contactComponentParams(
-      data, 'cat', '/ergos-contacto'
-    );
-    const esContact = this.contactComponentParams(
-      data, 'es', '/ergos-contacte'
-    );
     if( !this.state.header.title ) {
       return (
         <div>
@@ -155,14 +157,14 @@ export default class App extends Component {
                 path="/serveis"
                 render={Renderer.commonComponent.bind(
                   this,
-                  catServices
+                  this.servicesComponentParams( data, 'cat', '/servicios' )
                 )}
               />
               <Route
                 path="/servicios"
                 render={Renderer.commonComponent.bind(
                   this,
-                  esServices
+                  this.servicesComponentParams( data, 'es', '/serveis' )
                 )}
               />
 
@@ -171,14 +173,14 @@ export default class App extends Component {
                 path="/ergos-contacte"
                 render={Renderer.commonComponent.bind(
                   this,
-                  catContact
+                  this.contactComponentParams( data, 'cat', '/ergos-contacto' )
                 )}
               />
               <Route
                 path="/ergos-contacto"
                 render={Renderer.commonComponent.bind(
                   this,
-                  esContact
+                  this.contactComponentParams( data, 'es', '/ergos-contacte' )
                 )}
               />
 
@@ -187,20 +189,14 @@ export default class App extends Component {
                 path="/missatge-enviat"
                 render={Renderer.commonComponent.bind(
                   this,
-                  'success',
-                  data,
-                  selectedOption.value,
-                  {text: 'cat', url: {pathname: '/mensaje-enviado'}}
+                  this.successComponentParams( data, 'cat', '/mensaje-enviado' )
                 )}
               />
               <Route
                 path="/mensaje-enviado"
                 render={Renderer.commonComponent.bind(
                   this,
-                  'success',
-                  data,
-                  selectedOption.value,
-                  {text: 'es', url: {pathname: '/missatge-enviat'}}
+                  this.successComponentParams( data, 'es', '/missatge-enviat' )
                 )}
               />
             </Switch>

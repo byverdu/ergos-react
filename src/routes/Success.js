@@ -15,12 +15,10 @@ export default class Success extends Component {
     };
   }
 
-  shouldComponentUpdate( nextProps, nextState ) {
-    return false;
-  }
-
-  componentDidUpdate( nextProps, nextState ) {
-    this.setState({content: nextProps.data.content})
+  componentWillReceiveProps( nextProps ) {
+    this.setState({
+      content: nextProps.data.content
+    });
   }
 
   componentDidMount() {
