@@ -43,10 +43,6 @@ export default class Success extends Component {
     }
   }
 
-  shouldComponentUpdate( nextProps, nextState ) {
-    return nextState.counter > this.state.counter;
-  }
-
   render() {
     const { message, progress } = this.state.content;
     const { timer, counter } = this.state;
