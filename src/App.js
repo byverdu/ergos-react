@@ -25,6 +25,7 @@ export default class App extends Component {
     };
     this.onChildChanged = this.onChildChanged.bind( this );
     this.servicesComponentParams = this.servicesComponentParams.bind( this );
+    this.contactComponentParams = this.contactComponentParams.bind( this );
   }
 
   componentDidMount() {
@@ -67,11 +68,35 @@ export default class App extends Component {
     }
   }
 
+  contactComponentParams( data, langText, langPath ) {
+    const langValue = this.state.selectedOption.value
+    return {
+      componentName: 'contact',
+      data,
+      langValue,
+      langConfig: {
+        text: langText,
+        url: { pathname: langPath }
+      },
+      imgProps: false
+    }
+  }
+
 
   render() {
     const { header, footer, selectedOption, activityContent, data  } = this.state;
-    const catServices = this.servicesComponentParams( data, 'cat', '/servicios' );
-    const esServices = this.servicesComponentParams( data, 'es', '/serveis' );
+    const catServices = this.servicesComponentParams(
+      data, 'cat', '/servicios'
+    );
+    const esServices = this.servicesComponentParams(
+      data, 'es', '/serveis'
+    );
+    const catContact = this.contactComponentParams(
+      data, 'cat', '/ergos-contacto'
+    );
+    const esContact = this.contactComponentParams(
+      data, 'es', '/ergos-contacte'
+    );
     if( !this.state.header.title ) {
       return (
         <div>
@@ -125,6 +150,7 @@ export default class App extends Component {
                 )}
               />
 
+              {/* Services Routes */}
               <Route
                 path="/serveis"
                 render={Renderer.commonComponent.bind(
@@ -132,7 +158,6 @@ export default class App extends Component {
                   catServices
                 )}
               />
-
               <Route
                 path="/servicios"
                 render={Renderer.commonComponent.bind(
@@ -141,26 +166,23 @@ export default class App extends Component {
                 )}
               />
 
+              {/* Contact Routes */}
               <Route
                 path="/ergos-contacte"
                 render={Renderer.commonComponent.bind(
                   this,
-                  'contact',
-                  data,
-                  selectedOption.value,
-                  {text: 'cat', url: {pathname: '/ergos-contacto'}}
+                  catContact
                 )}
               />
               <Route
                 path="/ergos-contacto"
                 render={Renderer.commonComponent.bind(
                   this,
-                  'contact',
-                  data,
-                  selectedOption.value,
-                  {text: 'es', url: {pathname: '/ergos-contacte'}}
+                  esContact
                 )}
               />
+
+              {/* Succes Routes */}
               <Route
                 path="/missatge-enviat"
                 render={Renderer.commonComponent.bind(

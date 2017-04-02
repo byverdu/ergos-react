@@ -44,7 +44,7 @@ const commonComponent = ( componentParams ) => {
   };
   const TempComponent = mappedComponents[ componentName ];
 
-  if ( typeof  imgProps === "boolean" ) {
+  if ( imgProps ) {
     Object.assign( props, propsForImages( componentName, data, langValue ));
   }
 
