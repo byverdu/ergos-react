@@ -53,7 +53,8 @@ const commonComponent = ( componentParams ) => {
     : ( <Redirect to={`${langConfig.url.pathname}`} /> )
 }
 
-const activityComponent = ( componentName, data, langValue, activityContent, langConfig, routeProps ) => {
+const activityComponent = ( componentParams, routeProps ) => {
+  const { componentName, data, langValue, activityContent, langConfig } = componentParams;
   const props = {
     content: data[ componentName ][ "content" ][ langValue ],
     activityContent,

@@ -27,6 +27,7 @@ export default class App extends Component {
     this.servicesComponentParams = this.servicesComponentParams.bind( this );
     this.contactComponentParams = this.contactComponentParams.bind( this );
     this.successComponentParams = this.successComponentParams.bind( this );
+    this.activitiesComponentParams = this.activitiesComponentParams.bind( this );
   }
 
   componentDidMount() {
@@ -53,6 +54,21 @@ export default class App extends Component {
         value: event.target.value
       }
     });
+  }
+
+  activitiesComponentParams( data, activityContent, langText, langPath ) {
+    const langValue = this.state.selectedOption.value
+    return {
+      componentName: 'activities',
+      data,
+      activityContent,
+      langValue,
+      langConfig: {
+        text: langText,
+        url: { pathname: langPath }
+      },
+      imgProps: false
+    }
   }
 
   servicesComponentParams( data, langText, langPath ) {
@@ -128,27 +144,19 @@ export default class App extends Component {
                 )}
               />
 
+              {/* Activities Routes */}
               <Route
                 path="/activitats"
                 render={Renderer.activityComponent.bind(
                   this,
-                  'activities',
-                  data,
-                  selectedOption.value,
-                  activityContent,
-                  {text: 'cat', url: {pathname: '/actividades'}}
+                  this.activitiesComponentParams( data, activityContent, 'cat', '/actividades' )
                 )}
               />
-
               <Route
                 path="/actividades"
                 render={Renderer.activityComponent.bind(
                   this,
-                  'activities',
-                  data,
-                  selectedOption.value,
-                  activityContent,
-                  {text: 'es', url: {pathname: '/activitats'}}
+                  this.activitiesComponentParams( data, activityContent, 'es', '/activitats' )
                 )}
               />
 
