@@ -24,6 +24,7 @@ export default class App extends Component {
       selectedOption: {value: ""}
     };
     this.onChildChanged = this.onChildChanged.bind( this );
+    this.servicesComponentParams = this.servicesComponentParams.bind( this );
   }
 
   componentDidMount() {
@@ -52,8 +53,25 @@ export default class App extends Component {
     });
   }
 
+  servicesComponentParams( data, langText, langPath ) {
+    const langValue = this.state.selectedOption.value
+    return {
+      componentName: 'services',
+      data,
+      langValue,
+      langConfig: {
+        text: langText,
+        url: { pathname: langPath }
+      },
+      imgProps: true
+    }
+  }
+
+
   render() {
     const { header, footer, selectedOption, activityContent, data  } = this.state;
+    const catServices = this.servicesComponentParams( data, 'cat', '/servicios' );
+    const esServices = this.servicesComponentParams( data, 'es', '/serveis' );
     if( !this.state.header.title ) {
       return (
         <div>
@@ -111,11 +129,7 @@ export default class App extends Component {
                 path="/serveis"
                 render={Renderer.commonComponent.bind(
                   this,
-                  'services',
-                  data,
-                  selectedOption.value,
-                  {text: 'cat', url: {pathname: '/servicios'}},
-                  true
+                  catServices
                 )}
               />
 
@@ -123,11 +137,7 @@ export default class App extends Component {
                 path="/servicios"
                 render={Renderer.commonComponent.bind(
                   this,
-                  'services',
-                  data,
-                  selectedOption.value,
-                  {text: 'es', url: {pathname: '/serveis'}},
-                  true
+                  esServices
                 )}
               />
 

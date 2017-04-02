@@ -5,13 +5,17 @@ import Activities from '../../routes/Activities';
 import Services from '../../routes/Services';
 import Contact from '../../routes/Contact';
 import Success from '../../routes/Success';
+// SubPages
+import Ludicas from '../../routes/subRoutes/Ludicas';
+
 
 const mappedComponents = {
   contact: Contact,
   success: Success,
   home: Home,
   services: Services,
-  activities: Activities
+  activities: Activities,
+  ludicas: Ludicas
 }
 
 const propsForImages = ( componentName, data, langValue ) => {
@@ -32,7 +36,8 @@ const homeComponent = ( componentName, data, langValue ) => {
   return ( <TempComponent data={props} /> );
 }
 
-const commonComponent = ( componentName, data, langValue, langConfig, imgProps ) => {
+const commonComponent = ( componentParams ) => {
+  const { componentName, data, langValue, langConfig, imgProps } = componentParams;
 
   const props = {
     content: data[ componentName ][ "content" ][ langValue ]
