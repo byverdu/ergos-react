@@ -16,6 +16,14 @@ const getHeaderLinks = ( propsLinksList ) => {
   ));
 }
 
+const getActivityLinks = ( match, propsLinksList ) => {
+  return propsLinksList.map(( link, index ) => (
+    <Link key={ index } to={ `${match.path}${link.href}` } className="nav-link">
+        { link.text }
+    </Link>
+  ));
+}
+
 const getHeaderOptions = ( propsOptionsList ) => {
     return propsOptionsList.map(( opt, index ) => (
        <Option
@@ -44,16 +52,33 @@ const getHeaderOptions = ( propsOptionsList ) => {
   }
 
   const getModalItems = ( propsitems ) => {
-      return propsitems.map(( item, index ) => (
-        <ListGroupItem key={ index }>
-          <span className="key">{ item.key }</span> <span className="value">{ item.value }</span>
-        </ListGroupItem>
-      ));
+    return propsitems.map(( item, index ) => (
+      <ListGroupItem key={ index }>
+        <span className="key">{ item.key }</span> <span className="value">{ item.value }</span>
+      </ListGroupItem>
+    ));
+  }
+
+  const getImagesDataFor = ( pageName, items, url, legends ) => {
+    const images = [];
+    for ( let counter = 0; counter < items; counter ++ ) {
+      const srcUrl = `${url}/${pageName}_${counter}.jpg`;
+      const altAttr = `imagen ${counter} en ${pageName}`;
+      images.push({srcUrl, altAttr});
     }
+    return images.map(( item, index ) => (
+      <div key={`div_${index}`}>
+        <img key={`img_${index}`} src={item.srcUrl} alt={item.altAttr} />
+        <p key={`legen_${index}`} className="legend">{legends[ index ]}</p>
+      </div>
+    ));
+  };
 
 export {
   getHeaderLinks,
+  getActivityLinks,
   getHeaderOptions,
   getFooterListItems,
-  getModalItems
+  getModalItems,
+  getImagesDataFor
 }

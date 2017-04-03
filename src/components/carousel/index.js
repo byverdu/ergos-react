@@ -1,24 +1,38 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import './styles.css';
 import { Carousel } from 'react-responsive-carousel';
+import { getImagesDataFor } from '../../components/utils';
 
 export default class ErgosCarousel extends Component {
+  constructor( props ) {
+    super( props );
+
+    this.state = {
+      images: this.props.images,
+      pageName: this.props.pageName,
+      legends: this.props.legends
+    }
+  }
+
+  componentWillReceiveProps( nextProps ) {
+    this.setState({
+      legends: nextProps.legends
+    })
+  }
+
   render() {
+    const { items, url } = this.state.images;
+    const { pageName, legends } = this.state;
     return(
       <Carousel>
-        <div>
-                    <img src="http://placehold.it/350x150" alt="xoxo" />
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src="http://placehold.it/350x150" alt="xoxo" />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src="http://placehold.it/350x150" alt="xoxo" />
-                    <p className="legend">Legend 3</p>
-                </div>
+        {getImagesDataFor( pageName, items, url, legends )}
       </Carousel>
     );
   }
+}
+
+ErgosCarousel.propTypes = {
+  images: PropTypes.object.isRequired,
+  pageName: PropTypes.string.isRequired,
+  legends: PropTypes.array.isRequired
 }

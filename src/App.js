@@ -4,13 +4,11 @@ import Footer from './components/footer';
 import Loading from './components/subComponents/loading';
 import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import * as Renderer from './components/utils/renderers';
+import createBrowserHistory from 'history/createBrowserHistory'
 
-import Home from './routes/Home';
-import Activities from './routes/Activities';
-import Services from './routes/Services';
-import Contact from './routes/Contact';
-import Success from './routes/Success';
+const history = createBrowserHistory();
 
 export default class App extends Component {
   constructor( props ) {
@@ -18,13 +16,18 @@ export default class App extends Component {
 
     this.state = {
       header: {},
-      content: {},
+      data: {},
       footer: {},
       contact: {},
       success: {},
+      activityContent: {},
       selectedOption: {value: ""}
     };
     this.onChildChanged = this.onChildChanged.bind( this );
+    this.servicesComponentParams = this.servicesComponentParams.bind( this );
+    this.contactComponentParams = this.contactComponentParams.bind( this );
+    this.successComponentParams = this.successComponentParams.bind( this );
+    this.activitiesComponentParams = this.activitiesComponentParams.bind( this );
   }
 
   componentDidMount() {
@@ -33,10 +36,9 @@ export default class App extends Component {
         console.log( res.data );
         const responseData = {
           header: res.data.header,
-          content: res.data.content,
+          data: res.data.data,
           footer: res.data.footer,
-          contact: res.data.contact,
-          success: res.data.success,
+          activityContent: res.data.activityContent,
           selectedOption: {
             value: res.data.header.selectedOption.value
           }
@@ -54,37 +56,65 @@ export default class App extends Component {
     });
   }
 
-  getContentForPage( pageProp ) {
-    return this.state.content[ pageProp ][ this.state.selectedOption.value ];
+  activitiesComponentParams( data, activityContent, langText, langPath ) {
+    const langValue = this.state.selectedOption.value
+    return {
+      componentName: 'activities',
+      data,
+      activityContent,
+      langValue,
+      langConfig: {
+        text: langText,
+        url: { pathname: langPath }
+      },
+      imgProps: false
+    }
   }
 
-  homeRenderer() {
-    const content = this.getContentForPage( 'index' );
-    return <Home data={content} />
+  servicesComponentParams( data, langText, langPath ) {
+    const langValue = this.state.selectedOption.value
+    return {
+      componentName: 'services',
+      data,
+      langValue,
+      langConfig: {
+        text: langText,
+        url: { pathname: langPath }
+      },
+      imgProps: true
+    }
   }
 
-  activityRenderer() {
-    const content = this.getContentForPage( 'activities' );
-    return <Activities data={ content } />
+  contactComponentParams( data, langText, langPath ) {
+    const langValue = this.state.selectedOption.value
+    return {
+      componentName: 'contact',
+      data,
+      langValue,
+      langConfig: {
+        text: langText,
+        url: { pathname: langPath }
+      },
+      imgProps: false
+    }
   }
 
-  servicesRenderer() {
-    const content = this.getContentForPage( 'services' );
-    return <Services data={ content } />
-  }
-
-  contactRenderer() {
-    const content = this.getContentForPage( 'contact' );
-    return <Contact data={ content } />
-  }
-
-  successRenderer() {
-    const content = this.getContentForPage( 'success' );
-    return <Success data={ content } />
+  successComponentParams( data, langText, langPath ) {
+    const langValue = this.state.selectedOption.value
+    return {
+      componentName: 'success',
+      data,
+      langValue,
+      langConfig: {
+        text: langText,
+        url: { pathname: langPath }
+      },
+      imgProps: false
+    }
   }
 
   render() {
-    const { header, footer, selectedOption  } = this.state;
+    const { header, footer, selectedOption, activityContent, data  } = this.state;
     if( !this.state.header.title ) {
       return (
         <div>
@@ -93,7 +123,7 @@ export default class App extends Component {
       );
     }
     return (
-      <Router>
+      <Router history={history}>
         <Container fluid className="wrapper">
         <Row>
           <Col xs="12">
@@ -102,27 +132,82 @@ export default class App extends Component {
         </Row>
         <Row>
           <Col xs="12">
-            <Route
-              exact
-              path="/"
-              render={this.homeRenderer.bind( this )}
-            />
-            <Route
-              path="/activitats"
-              render={this.activityRenderer.bind( this )}
-            />
-            <Route
-              path="/serveis"
-              render={this.servicesRenderer.bind( this )}
-            />
-            <Route
-              path="/contacte"
-              render={this.contactRenderer.bind( this )}
-            />
-            <Route
-              path="/success"
-              render={this.successRenderer.bind( this )}
-            />
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={Renderer.homeComponent.bind(
+                  this,
+                  'home',
+                  data,
+                  selectedOption.value
+                )}
+              />
+
+              {/* Activities Routes */}
+              <Route
+                path="/activitats"
+                render={Renderer.activityComponent.bind(
+                  this,
+                  this.activitiesComponentParams( data, activityContent, 'cat', '/actividades' )
+                )}
+              />
+              <Route
+                path="/actividades"
+                render={Renderer.activityComponent.bind(
+                  this,
+                  this.activitiesComponentParams( data, activityContent, 'es', '/activitats' )
+                )}
+              />
+
+              {/* Services Routes */}
+              <Route
+                path="/serveis"
+                render={Renderer.commonComponent.bind(
+                  this,
+                  this.servicesComponentParams( data, 'cat', '/servicios' )
+                )}
+              />
+              <Route
+                path="/servicios"
+                render={Renderer.commonComponent.bind(
+                  this,
+                  this.servicesComponentParams( data, 'es', '/serveis' )
+                )}
+              />
+
+              {/* Contact Routes */}
+              <Route
+                path="/ergos-contacte"
+                render={Renderer.commonComponent.bind(
+                  this,
+                  this.contactComponentParams( data, 'cat', '/ergos-contacto' )
+                )}
+              />
+              <Route
+                path="/ergos-contacto"
+                render={Renderer.commonComponent.bind(
+                  this,
+                  this.contactComponentParams( data, 'es', '/ergos-contacte' )
+                )}
+              />
+
+              {/* Succes Routes */}
+              <Route
+                path="/missatge-enviat"
+                render={Renderer.commonComponent.bind(
+                  this,
+                  this.successComponentParams( data, 'cat', '/mensaje-enviado' )
+                )}
+              />
+              <Route
+                path="/mensaje-enviado"
+                render={Renderer.commonComponent.bind(
+                  this,
+                  this.successComponentParams( data, 'es', '/missatge-enviat' )
+                )}
+              />
+            </Switch>
           </Col>
         </Row>
         <Row>

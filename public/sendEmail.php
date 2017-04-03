@@ -51,6 +51,6 @@ if(isset($_POST['email'])) {
 
   @mail($email_to, $email_subject, $email_message, $headers);
 
-  header('Location: http://localhost:8888/success');
+  header('Location: http://192.168.0.10:8888/#/mensaje-enviado');
   die();
 }

@@ -3,20 +3,22 @@ import { Row, Col, Progress } from 'reactstrap';
 import Loading from '../components/subComponents/loading';
 import ReactHtmlParser from 'react-html-parser';
 
-export default class Contact extends Component {
+export default class Success extends Component {
   constructor( props ) {
     super( props )
 
     this.state = {
-      content: this.props.data,
+      content: this.props.data.content,
       counter: 0,
-      clearInterval: 0,
-      timer: 60
+      intervalId: 0,
+      timer: 30
     };
   }
 
-  componentDidUpdate( nextProps, nextState ) {
-    this.setState({content: nextProps.data})
+  componentWillReceiveProps( nextProps ) {
+    this.setState({
+      content: nextProps.data.content
+    });
   }
 
   componentDidMount() {
@@ -29,19 +31,14 @@ export default class Contact extends Component {
   }
 
   setTimer() {
-    console.log( 'osoosos' );
     this.setState({
-      counter: this.state.counter + 1.6666667,
+      counter: this.state.counter + 3.333334,
       timer: this.state.timer - 1
     });
-    if ( this.state.timer < 0 ) {
+    if ( this.state.timer === 0 ) {
       // not best solution
-      window.location = '/'
+      window.location = '/';
     }
-  }
-
-  shouldComponentUpdate( nextProps, nextState ) {
-    return nextState.counter > this.state.counter;
   }
 
   render() {
@@ -59,7 +56,7 @@ export default class Contact extends Component {
         <Col xs="12">
           { ReactHtmlParser( message )}
           {progress} 0:{timer < 10 ? `0${timer}` : timer}
-          <Progress color="warning" value={counter} />
+          <Progress color="warning" value={counter}> {`${Math.round( counter )}%`} </Progress>
         </Col>
       </Row>
     );

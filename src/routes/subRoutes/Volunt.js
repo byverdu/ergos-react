@@ -1,9 +1,9 @@
 import React from 'react';
-import { RouteComponentFactory } from './RouteComponentFactory';
+import { RouteComponentFactory } from '../RouteComponentFactory';
 
-const Home = RouteComponentFactory( 'home' );
+const Volunt = RouteComponentFactory( 'volunt' );
 
-Home.propTypes = {
+Volunt.propTypes = {
   data: React.PropTypes.shape({
     content: React.PropTypes.string,
     images: React.PropTypes.shape({
@@ -14,4 +14,4 @@ Home.propTypes = {
   })
 }
 
-export default Home;
+export default Volunt;
