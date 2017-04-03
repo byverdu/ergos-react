@@ -78,6 +78,22 @@ export default class Activities extends Component {
               this.subComponentParams( 'ludicas', activityContent.data, 'es', '/actividades/ludiques' )
             )}
           />
+
+          {/* intergeneracional Routes */}
+          <Route
+            path={`${this.props.match.path}/cat/intergeneracional`}
+            render={Renderer.commonComponent.bind(
+              this,
+              this.subComponentParams( 'inter', activityContent.data, 'cat', '/actividades/es/intergeneracional' )
+            )}
+          />
+          <Route
+            path={`${this.props.match.path}/es/intergeneracional`}
+            render={Renderer.commonComponent.bind(
+              this,
+              this.subComponentParams( 'inter', activityContent.data, 'es', '/activitats/cat/intergeneracional' )
+            )}
+          />
         </Col>
       </Row>
     );

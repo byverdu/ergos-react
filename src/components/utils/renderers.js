@@ -7,6 +7,7 @@ import Contact from '../../routes/Contact';
 import Success from '../../routes/Success';
 // SubPages
 import Ludicas from '../../routes/subRoutes/Ludicas';
+import Inter from '../../routes/subRoutes/Inter';
 
 
 const mappedComponents = {
@@ -15,7 +16,8 @@ const mappedComponents = {
   home: Home,
   services: Services,
   activities: Activities,
-  ludicas: Ludicas
+  ludicas: Ludicas,
+  inter: Inter
 }
 
 const propsForImages = ( componentName, data, langValue ) => {
