@@ -16,6 +16,22 @@ export default class Activities extends Component {
       activityContent: this.props.data.activityContent,
       lang: this.props.data.langValue
     };
+
+    this.subComponentParams = this.subComponentParams.bind( this );
+  }
+
+  subComponentParams( componentName, data, langText, langPath ) {
+    const langValue = this.state.lang;
+    return {
+      componentName,
+      data,
+      langValue,
+      langConfig: {
+        text: langText,
+        url: { pathname: langPath }
+      },
+      imgProps: true
+    }
   }
 
   componentWillReceiveProps( nextProps ) {
@@ -32,7 +48,7 @@ export default class Activities extends Component {
   }
 
   render() {
-    const { content, activityContent, lang } = this.state;
+    const { content, activityContent } = this.state;
     const links = this.createLink();
     if( !content ) {
       return (
@@ -46,35 +62,24 @@ export default class Activities extends Component {
         <Col xs="12">
           { ReactHtmlParser( content )}
           {getActivityLinks( this.props.match, links )}
-              <Route
-                path={`${this.props.match.path}/ludiques`}
-                render={Renderer.commonComponent.bind(
-                  this,
-                  'ludicas',
-                  activityContent.data,
-                  lang,
-                  {text: 'cat', url: {pathname: '/actividades/ludicas`'}},
-                  true
-                )}
-              />
-              <Route
-                path={`${this.props.match.path}/ludicas`}
-                render={Renderer.commonComponent.bind(
-                  this,
-                  'ludicas',
-                  activityContent.data,
-                  lang,
-                  {text: 'es', url: {pathname: '/actividades/ludiques`'}},
-                  true
-                )}
-              />
+
+          {/* Ludicas Routes */}
+          <Route
+            path={`${this.props.match.path}/ludiques`}
+            render={Renderer.commonComponent.bind(
+              this,
+              this.subComponentParams( 'ludicas', activityContent.data, 'cat', '/actividades/ludicas' )
+            )}
+          />
+          <Route
+            path={`${this.props.match.path}/ludicas`}
+            render={Renderer.commonComponent.bind(
+              this,
+              this.subComponentParams( 'ludicas', activityContent.data, 'es', '/actividades/ludiques' )
+            )}
+          />
         </Col>
       </Row>
     );
   }
 }
-const Topic = ({ match }) => (
-  <div>
-    <h3>{match.params.topicId}</h3>
-  </div>
-)
