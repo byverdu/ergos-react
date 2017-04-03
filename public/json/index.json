@@ -235,8 +235,8 @@
   	"data": {
   		"ludicas": {
         "content": {
-          "cat": "<h1>Activitats Lùdiques</h1><p>Pretenen donar resposta a diferents necessitats emocionals, funcionals i cognitives.</p>",
-          "es": "<h1>Actividades Lúdicas</h1><p>Pretenden dar respuesta a diferentes necesidades emocionales, funcionales y cognitivas.</p>"
+          "cat": "<h1>Activitats Lùdiques</h1><p>Pretenen donar resposta a diferents necessitats emocionals, funcionals i cognitives.</p><table class=\"table table-stripped\"><thead class=\"thead-inverse\"><tr><th>Necessitat</th><th>Emocional</th><th>Funcional</th><th>Cognitiva</th></tr></thead><tbody><tr><td rowspan=\"3\">objectius</td><td>Potenciar autoestima i estat psicoafectiu,Reduir sentiment de aïllament.</td><td>Mantenir capacitats funcionals.</td><td>Desenvolupar les capacitats mentals</td></tr><tr><td>Fomentar el contacte i la<br>interrelació entre usuaris.</td><td>Fomentar sentiment d'utilitat</td><td>Millorar i optimitzar funcionament</td></tr><tr><td>Augmentar estat anímic positiu.</td><td>Reduir inactivitat i desmotivació</td><td>Mantenir capacitats i<br>habilitats relacionals</td></tr></tbody></table>",
+          "es": "<h1>Actividades Lúdicas</h1><p>Pretenden dar respuesta a diferentes necesidades emocionales, funcionales y cognitivas.</p><table class=\"table table-stripped\"><thead class=\"thead-inverse\"><tr><th>Necesidades</th><th>emocional</th><th>funcional</th><th>cognitiva</th></tr></thead><tbody><tr><td rowspan=\"3\">objetivos</td><td>Potenciar autoestima y estado psicoafectivo,Reducir sentimiento de aislamiento.</td><td>Mantener capacidades funcionales.</td><td>Desarrollar las capacidades<br>mentales</td></tr><tr><td>Fomentar el contacto y la interrelación<br>entre usuarios.</td><td>Fomentar sentimiento de utilidad.</td><td>Mejorar y optimizar el funcionamiento</td></tr><tr><td>Aumentar estado anímico<br>positivo.</td><td>Reducir inactividad y desmotivación</td><td>Mantener capacidades y<br>habilidades relacionales</td></tr></tbody></table>"
         },
         "images": {
             "items": 5,
