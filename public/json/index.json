@@ -239,20 +239,26 @@
           "es": "<h1>Actividades Lúdicas</h1><p>Pretenden dar respuesta a diferentes necesidades emocionales, funcionales y cognitivas.</p><table class=\"table table-stripped\"><thead class=\"thead-inverse\"><tr><th>Necesidades</th><th>emocional</th><th>funcional</th><th>cognitiva</th></tr></thead><tbody><tr><td rowspan=\"3\">objetivos</td><td>Potenciar autoestima y estado psicoafectivo,Reducir sentimiento de aislamiento.</td><td>Mantener capacidades funcionales.</td><td>Desarrollar las capacidades<br>mentales</td></tr><tr><td>Fomentar el contacto y la interrelación<br>entre usuarios.</td><td>Fomentar sentimiento de utilidad.</td><td>Mejorar y optimizar el funcionamiento</td></tr><tr><td>Aumentar estado anímico<br>positivo.</td><td>Reducir inactividad y desmotivación</td><td>Mantener capacidades y<br>habilidades relacionales</td></tr></tbody></table>"
         },
         "images": {
-            "items": 5,
-            "url": "./media/services",
+            "items": 7,
+            "url": "./media/ludicas",
             "legends": {
               "cat": [
-                "Zones Comuns",
-                "Sales amb Televisió",
-                " Zones per visites",
-                "Activitats al aire lliure"
+                "Sortida a Can Portell",
+                "Sortida a Can Portell",
+                "Sortida a Can Portell",
+                "Sortida a Can Portell",
+                "Zooterapia",
+                "Zooterapia",
+                "Zooterapia"
               ],
               "es": [
-                "Zonas Comunes",
-                "Salas con Televisión",
-                " Zonas para visitas",
-                "Actividades al aire libre"
+                "Salida a Can Portell",
+                "Salida a Can Portell",
+                "Salida a Can Portell",
+                "Salida a Can Portell",
+                "Zooterapia",
+                "Zooterapia",
+                "Zooterapia"
               ]
             }
           }
@@ -263,20 +269,18 @@
     			"es": "<h1>Programa de Voluntariado</h1><p>El voluntariado mejora la integración de los residentes con la comunidad y tiene una función de apoyo a los residentes sin vínculos familiares, así como una acción complementaria a la acción familiar.</p><h3>OBJECTIVOS</h3><p>En términos generales, el Programa de Voluntariado pretende alcanzar los siguientes objetivos:</p><ul><li>Mejorar la calidad de vida de los residentes.</li><li>Potenciar la sociabilización y las relaciones personales.</li><li>Mejorar la autoestima y los sentimientos de utilidad.</li><li>Paliar la marginación y aislamiento social.</li><li>Potenciar la integración con la comunidad.</li></ul><h3>ACTIVIDADES</h3><ul><li>Acompañamiento individual fomentando la creación de vínculo.</li><li>Taller de Jardinería.</li></ul>"
         },
         "images": {
-            "items": 5,
-            "url": "./media/services",
+            "items": 3,
+            "url": "./media/volunt",
             "legends": {
               "cat": [
-                "Zones Comuns",
-                "Sales amb Televisió",
-                " Zones per visites",
-                "Activitats al aire lliure"
+                "Taller Jardineria",
+                "Taller Jardineria",
+                "Taller Jardineria"
               ],
               "es": [
-                "Zonas Comunes",
-                "Salas con Televisión",
-                " Zonas para visitas",
-                "Actividades al aire libre"
+                "Taller Jardineria",
+                "Taller Jardineria",
+                "Taller Jardineria"
               ]
             }
           }
@@ -287,20 +291,27 @@
           "es": "<h1>Programa Intergeneracional</h1><p>El programa intergeneracional une a varias generaciones en actividades planificadas con el objetivo de desarrollar unas relaciones y alcanzar unos objetivos específicos. Permiten beneficiarse y aprender unos de otros. Es un vínculo de educación cívica que no sólo afecta a quien participa, sino que recae en todo el sistema social.</p>.<p>Los programas intergeneracionales pretenden fomentar el contacto entre las diferentes generaciones de una localidad creando espacios reales de convivencia. Los beneficios de las actividades o programas intergeneracionales son múltiples tanto a nivel individual como col·lectivo.</p>"
         },
       "images": {
-          "items": 5,
-          "url": "./media/services",
+          "items": 47,
+          "url": "./media/inter",
           "legends": {
             "cat": [
-              "Zones Comuns",
-              "Sales amb Televisió",
-              " Zones per visites",
-              "Activitats al aire lliure"
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional"
             ],
             "es": [
-              "Zonas Comunes",
-              "Salas con Televisión",
-              " Zonas para visitas",
-              "Actividades al aire libre"
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional",
+              "Programa Intergeneracional"
             ]
           }
         }
