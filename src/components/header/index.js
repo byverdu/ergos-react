@@ -11,23 +11,34 @@ export default class Header extends Component {
   constructor( props ) {
     super( props )
     this.state = props.data;
-    console.log( this.state );
 
     this.handleChange = this.handleChange.bind( this );
     this.handleToggle = this.handleToggle.bind( this );
+    this.onClickHandler = this.onClickHandler.bind( this );
   }
 
   handleChange( event ) {
-    console.log(  event.target.value , 'child' );
     this.props.callbackParent( event );
-      this.setState({selectedOption : {
-        value: event.target.value}})
+      this.setState({
+        selectedOption : {
+          value: event.target.value
+        },
+        isOpen: !this.state.isOpen
+      })
   }
 
   handleToggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
+  }
+
+  onClickHandler() {
+    if ( this.state.isOpen ) {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    }
   }
 
   render() {
@@ -40,7 +51,7 @@ export default class Header extends Component {
           <Title title={ title }/>
         </NavbarBrand>
         <Collapse isOpen={isOpen} navbar className="ergos-navbar__item-second">
-          <ErgosNav linksList={ getHeaderLinks( linksList[ lang ])} />
+          <ErgosNav linksList={ getHeaderLinks( linksList[ lang ],this.onClickHandler )} />
           <Dropdown
             optionsList={ getHeaderOptions( optionsList )}
             value={ lang }

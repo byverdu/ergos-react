@@ -6,10 +6,10 @@ import Phone from '../icons/phone';
 import { NavItem, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const getHeaderLinks = ( propsLinksList ) => {
+const getHeaderLinks = ( propsLinksList, clickHandler ) => {
   return propsLinksList.map(( link, index ) => (
     <NavItem key={ index }>
-      <Link to={ link.href } className="nav-link">
+      <Link to={ link.href } onClick={clickHandler} className="nav-link">
         { link.text }
       </Link>
     </NavItem>
