@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import Title from './title';
-import Logo from './logo';
 import ErgosNav from './ergosNav';
 import Dropdown from './dropdown';
-import logo from '../media/logo.png';
 import { getHeaderLinks, getHeaderOptions } from '../utils/';
 import {
-  Navbar, NavbarToggler, NavbarBrand, Collapse
+  Navbar, NavbarToggler, NavbarBrand, Collapse, Col
 } from 'reactstrap';
 
 export default class Header extends Component {
@@ -36,22 +34,18 @@ export default class Header extends Component {
     const { title, altImg, linksList, optionsList, isOpen } = this.state;
     const lang = this.state.selectedOption.value;
     return (
-      <Navbar color="primary" light toggleable>
+      <Navbar color="inverse" className="ergos-navbar" toggleable full fixed="top">
         <NavbarToggler right onClick={this.handleToggle} />
-        <NavbarBrand href="/">
-        <Logo srcImg={ logo } altImg={ altImg } />
+        <NavbarBrand href="/" className="ergos-navbar__item-first">
           <Title title={ title }/>
         </NavbarBrand>
-        <Collapse isOpen={isOpen} navbar>
+        <Collapse isOpen={isOpen} navbar className="ergos-navbar__item-second">
           <ErgosNav linksList={ getHeaderLinks( linksList[ lang ])} />
-        </Collapse>
-        <header>
-
           <Dropdown
             optionsList={ getHeaderOptions( optionsList )}
             value={ lang }
             propHandleChange={ this.handleChange } />
-        </header>
+          </Collapse>
       </Navbar>
     )
   }

@@ -1,29 +1,105 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 .wrapper {
-  margin: 0 auto;
-  max-width: 1200px;
+  margin-top: 100px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+body {
+  background-image: url("./components/media/bg.jpg");
+  font-family: 'Raleway', sans-serif !important;
+}
+
+.ergos-navbar a {
+  border-bottom: 3px solid transparent;
+  padding: 4px 14px !important;
+  color: rgba(255,255,255, 1);
+}
+
+.ergos-header__select {
+  font-size: 13px;
+  border-width: 1px;
+  background: inherit;
+  display: inline-block;
+  height: 30px;
+  color: white;
+  letter-spacing: 3px;
+  outline-color: #0275d8;
+  border-style: dashed;
+  transition: border-style 13s;
+  margin-top: 6px;
+}
+
+select.ergos-header__select:hover {
+  border-color: #0275D7;
+  border-style: solid;
+}
+
+.ergos-navbar .navbar-nav {
+  position: relative;
+  right: 20px;
+  top: 6px;
+}
+
+.ergos-navbar a:hover {
+  color: white !important;
+  border-bottom-color: rgba(2,117,216, .5);
+  font-size: 1.04rem;
+}
+
+.ergos-content {
+  margin: 20px auto;
+}
+
+.navbar-toggler {
+  background: url(./components/media/burger.png) no-repeat !important;
+}
+
+@media screen and (max-width:992px) {
+  .wrapper {
+    margin-top: 150px;
+  }
+  .ergos-navbar__item-second {
+    justify-content: center;
+  }
+  .ergos-navbar .ml-auto {
+    margin-left: 0 !important;
+  }
+  .ergos-navbar {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 130px;
+  }
+}
+
+@media screen and (max-width:575px) {
+  .wrapper {
+    margin-top: 80px;
+  }
+  .ergos-navbar {
+    height: auto;
+  }
+  .ergos-navbar a {
+    font-size: 1.04em
+  }
+  .ergos-navbar a:hover {
+    border-bottom-color: transparent;
+  }
+  .ergos-navbar h1 {
+    font-size: 1.6em;
+  }
+  .ergos-navbar .nav-item {
+    text-align: center;
+    padding: 5px 0;
+    border-bottom: 1px outset rgba(255,255,255, .4);
+  }
+  .ergos-navbar a:hover {
+    font-size: 1.04rem;
+  }
+  .ergos-navbar .navbar-nav {
+    top: 10px;
+    right: 0;
+  }
+  .ergos-header__select {
+    width: 150px;
+    margin: 25px auto 10px auto;
+    display: block;
+  }
 }

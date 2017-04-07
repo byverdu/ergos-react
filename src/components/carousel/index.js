@@ -24,7 +24,7 @@ export default class ErgosCarousel extends Component {
     const { items, url } = this.state.images;
     const { pageName, legends } = this.state;
     return(
-      <Carousel>
+      <Carousel className="ergos-carousel" infiniteLoop autoPlay interval={6000}>
         {getImagesDataFor( pageName, items, url, legends )}
       </Carousel>
     );

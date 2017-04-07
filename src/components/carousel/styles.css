@@ -236,3 +236,13 @@
     color: #fff; }
   .carousel:hover .slide .legend {
     opacity: 1; }
+.ergos-carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5px 15px;
+  background: rgba(0,0,0,.5);
+}
+
+.ergos-carousel .slide img{
+  max-width: 800px;
+}
