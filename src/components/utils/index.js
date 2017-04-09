@@ -4,14 +4,14 @@ import Address from '../icons/placeholder';
 import Mail from '../icons/mail';
 import Phone from '../icons/phone';
 import { NavItem, ListGroupItem } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const getHeaderLinks = ( propsLinksList, clickHandler ) => {
   return propsLinksList.map(( link, index ) => (
     <NavItem key={ index }>
-      <Link to={ link.href } onClick={clickHandler} className="nav-link">
+      <NavLink exact activeClassName="active-link" to={ link.href } onClick={clickHandler} className="nav-link">
         { link.text }
-      </Link>
+      </NavLink>
     </NavItem>
   ));
 }

@@ -16,7 +16,7 @@ body {
 .ergos-navbar a {
   border-bottom: 3px solid transparent;
   padding: 4px 14px !important;
-  color: rgba(255,255,255, 1);
+  color: rgba(0,0,0, .8);
 }
 
 .ergos-header__select {
@@ -25,12 +25,13 @@ body {
   background: inherit;
   display: inline-block;
   height: 30px;
-  color: white;
+  color: black;
   letter-spacing: 3px;
   outline-color: #0275d8;
   border-style: dashed;
   transition: border-style 13s;
   margin-top: 6px;
+  margin-right: 15px;
 }
 
 select.ergos-header__select:hover {
@@ -44,10 +45,19 @@ select.ergos-header__select:hover {
   top: 6px;
 }
 
+.ergos-navbar {
+  background-image: url("./components/media/bg.jpg");
+  box-shadow: 1px 1px 4px black;
+}
+
+.active-link {
+  color: rgba(2,117,216, .5) !important;
+  border-bottom-color: rgba(2,117,216, .5) !important;
+}
+
 .ergos-navbar a:hover {
-  color: white !important;
+  color: rgba(2,117,216, .5) !important;
   border-bottom-color: rgba(2,117,216, .5);
-  font-size: 1.04rem;
 }
 
 .ergos-content {
@@ -91,7 +101,7 @@ select.ergos-header__select:hover {
 
 .ergos-footer__copy {
   text-align: center;
-  align-self: flex-end;
+  align-self: center;
   margin-bottom: 10px;
 }
 .ergos-footer__info {
@@ -101,6 +111,15 @@ select.ergos-header__select:hover {
 .ergos-footer__info .info-toggle {
   text-align: right;
   padding-right: 40px;
+}
+
+strong {
+  color: #f16529;
+}
+
+.btn-outline-primary {
+    color: white !important;
+    border-color: white !important;
 }
 
 @media screen and (max-width:992px) {

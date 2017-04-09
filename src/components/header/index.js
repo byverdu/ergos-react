@@ -45,13 +45,13 @@ export default class Header extends Component {
     const { title, altImg, linksList, optionsList, isOpen } = this.state;
     const lang = this.state.selectedOption.value;
     return (
-      <Navbar color="inverse" className="ergos-navbar" toggleable full fixed="top">
+      <Navbar className="ergos-navbar" toggleable full fixed="top">
         <NavbarToggler right onClick={this.handleToggle} />
         <NavbarBrand href="/" className="ergos-navbar__item-first">
           <Title title={ title }/>
         </NavbarBrand>
         <Collapse isOpen={isOpen} navbar className="ergos-navbar__item-second">
-          <ErgosNav linksList={ getHeaderLinks( linksList[ lang ],this.onClickHandler )} />
+          <ErgosNav linksList={ getHeaderLinks( linksList[ lang ], this.onClickHandler )} />
           <Dropdown
             optionsList={ getHeaderOptions( optionsList )}
             value={ lang }
