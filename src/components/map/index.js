@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './map.css';
 import loadGoogleMapsAPI from 'load-google-maps-api';
 import * as Map from './constants';
 

@@ -64,7 +64,9 @@
     background: none; }
   .carousel img {
     width: 100%;
-    display: inline-block; }
+    display: inline-block;
+    max-height: 40px;
+      object-fit: cover;}
   .carousel .carousel {
     position: relative; }
   .carousel .control-arrow {
@@ -236,3 +238,14 @@
     color: #fff; }
   .carousel:hover .slide .legend {
     opacity: 1; }
+.ergos-carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5px 15px;
+  background: rgba(0,0,0,.5);
+}
+
+.ergos-carousel .slide img{
+    max-width: 800px;
+    max-height: 600px;
+}

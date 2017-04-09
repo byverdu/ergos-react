@@ -23,7 +23,7 @@ export default class Contact extends Component {
   }
 
   render() {
-    const { title, address, email, message, name, telephone, route, transport } = this.state.content;
+    const { title, address, email, message, name, telephone, route, titleMap, transport } = this.state.content;
     if( !address ) {
       return (
         <div>
@@ -34,7 +34,8 @@ export default class Contact extends Component {
     return (
       <div>
         <Row>
-          <Col xs="12">
+          <Col xs="12" className="col-lg-8 offset-lg-2">
+            <h1>{title}</h1>
             <Form action="sendEmail.php" method="post">
               <FormGroup>
                 <Label for="name">{name}</Label>
@@ -52,17 +53,21 @@ export default class Contact extends Component {
                 <Label for="message">{message}</Label>
                 <Input type="textarea" name="comments" placeholder={message} id="message" />
               </FormGroup>
-              <Input className="btn btn-outline-primary" value="Enviar" type="submit"/>
+              <Input className="btn btn-outline-success" value="Enviar" type="submit"/>
             </Form>
           </Col>
         </Row>
         <Row>
           <Col xs="12">
-            <h1>{title}</h1>
-            <p>{address}</p>
-            <ErgosMap />
-            <a href="https://www.google.es/maps/dir//Carrer+de+Pomaret,+25,+08017+Barcelona/@41.404459,2.1216827,17z/data=!4m16!1m7!3m6!1s0x12a4983e4bf1325b:0xbd8605a8efe44a50!2sCarrer+de+Pomaret,+25,+08017+Barcelona!3b1!8m2!3d41.404459!4d2.1238714!4m7!1m0!1m5!1m1!1s0x12a4983e4bf1325b:0xbd8605a8efe44a50!2m2!1d2.1238714!2d41.404459?hl=es" target="_blank">{route}</a>
-            { this.renderTransport( transport ) }
+            <div className="contact-map">
+              <h1>{titleMap}</h1>
+              <p>{address}</p>
+              <ErgosMap />
+              <a href="https://www.google.es/maps/dir//Carrer+de+Pomaret,+25,+08017+Barcelona/@41.404459,2.1216827,17z/data=!4m16!1m7!3m6!1s0x12a4983e4bf1325b:0xbd8605a8efe44a50!2sCarrer+de+Pomaret,+25,+08017+Barcelona!3b1!8m2!3d41.404459!4d2.1238714!4m7!1m0!1m5!1m1!1s0x12a4983e4bf1325b:0xbd8605a8efe44a50!2m2!1d2.1238714!2d41.404459?hl=es" target="_blank">{route}</a>
+              <ul>
+                { this.renderTransport( transport ) }
+              </ul>
+            </div>
           </Col>
         </Row>
       </div>

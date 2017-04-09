@@ -1,5 +1,4 @@
-import React, { Component, PropTypes } from 'react';
-import { Row, Col } from 'reactstrap';
+import React, { Component } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../components/subComponents/loading';
 import ErgosCarousel from '../components/carousel';
@@ -24,6 +23,11 @@ export function RouteComponentFactory ( pageName ) {
       });
     }
 
+    setCarouselPosition( pageName ) {
+      const mainPages = [ 'home', 'services' ];
+      return mainPages.indexOf( pageName ) >= 0;
+    }
+
     render() {
       const { content, images, pageName, legends } = this.state;
       if( !content ) {
@@ -34,12 +38,21 @@ export function RouteComponentFactory ( pageName ) {
         );
       }
       return (
-        <Row>
-          <Col xs="12">
-            <ErgosCarousel images={images} pageName={pageName} legends={legends} />
+        <div>
+          {
+            this.setCarouselPosition( pageName ) ?
+            <ErgosCarousel images={images} pageName={pageName} legends={legends} /> :
+            null
+          }
+          <div className="ergos-content">
             { ReactHtmlParser( content )}
-          </Col>
-        </Row>
+          </div>
+          {
+            !this.setCarouselPosition( pageName ) ?
+            <ErgosCarousel images={images} pageName={pageName} legends={legends} /> :
+            null
+          }
+        </div>
       );
     }
   }

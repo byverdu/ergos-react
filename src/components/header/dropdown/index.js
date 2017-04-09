@@ -5,6 +5,7 @@ export default class Dropdown extends Component {
     const { value, propHandleChange, optionsList } = this.props;
     return(
       <select
+        className="ergos-header__select"
         value={ value }
         onChange={ propHandleChange }
       >
