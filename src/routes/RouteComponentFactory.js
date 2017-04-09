@@ -34,12 +34,12 @@ export function RouteComponentFactory ( pageName ) {
         );
       }
       return (
-        <Row>
-          <Col xs="12">
-            <ErgosCarousel images={images} pageName={pageName} legends={legends} />
+        <Col className="col-lg-8 offset-lg-2 ergos-wrapper-content">
+          <ErgosCarousel images={images} pageName={pageName} legends={legends} />
+          <div className="ergos-content">
             { ReactHtmlParser( content )}
-          </Col>
-        </Row>
+          </div>
+        </Col>
       );
     }
   }

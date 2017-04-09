@@ -32,7 +32,7 @@ export default class ErgosModal extends Component {
     const { modalTextBtn, header, content } = this.state.modalData;
     const infoTextBtn = this.state.infoTextBtn;
     return (
-      <div>
+      <div className="info-toggle">
         <Button outline color="primary" onClick={this.toggle}>{infoTextBtn}</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>

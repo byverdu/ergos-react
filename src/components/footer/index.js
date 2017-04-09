@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getFooterListItems } from '../utils';
 import ErgosModal from '../modal'
+import { Col, Row, Container } from 'reactstrap';
 
 export default class Footer extends Component {
   constructor( props ) {
@@ -8,7 +9,8 @@ export default class Footer extends Component {
 
     this.state = {
       data: props.data.footer,
-      lang: props.data.selectedOption.value
+      lang: props.data.selectedOption.value,
+      copy: new Date().getFullYear()
     };
   }
 
@@ -24,12 +26,19 @@ export default class Footer extends Component {
     const { listItems, infoTextBtn, modal } = this.state.data;
     const lang = this.state.lang;
     return(
-      <div>
-        <ul>
-          { getFooterListItems( listItems ) }
-        </ul>
-        <ErgosModal modalData={ modal[ lang ] } infoTextBtn={ infoTextBtn } />
-      </div>
+      <Row>
+        <div className="ergos-footer__list col-md-4 col-sm-12">
+          <ul>
+            { getFooterListItems( listItems ) }
+          </ul>
+        </div>
+        <div className="ergos-footer__copy col-6 col-md-4 col-sm-6">
+          <span>&copy; {this.state.copy}</span>
+        </div>
+        <div className="ergos-footer__info col-6 col-md-4 col-sm-6">
+          <ErgosModal modalData={ modal[ lang ] } infoTextBtn={ infoTextBtn } />
+        </div>
+      </Row>
     );
   }
 }

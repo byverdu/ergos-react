@@ -1,8 +1,14 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 .wrapper {
-  margin-top: 100px;
+  margin: 100px 0 180px 0;
 }
 
 body {
+  min-width: 360px;
   background-image: url("./components/media/bg.jpg");
   font-family: 'Raleway', sans-serif !important;
 }
@@ -52,9 +58,55 @@ select.ergos-header__select:hover {
   background: url(./components/media/burger.png) no-repeat !important;
 }
 
+.icon {
+  fill: white;
+}
+
+.icon:hover {
+  fill: rgba(2,117,216, 1);
+}
+
+.ergos-footer {
+  position: absolute !important;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  height: 160px;
+  padding-top: 30px;
+  min-width: 360px;
+}
+
+.ergos-footer ul {
+  list-style: none;
+}
+.ergos-footer li {
+  justify-content: flex-start;
+}
+
+.ergos-footer__list span {
+  position: relative;
+  top: -12px;
+  left: 20px;
+}
+
+.ergos-footer__copy {
+  text-align: center;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+.ergos-footer__info {
+  align-self: center;
+  justify-content: flex-end;
+}
+.ergos-footer__info .info-toggle {
+  text-align: right;
+  padding-right: 40px;
+}
+
 @media screen and (max-width:992px) {
   .wrapper {
     margin-top: 150px;
+    margin-bottom: 210px;
   }
   .ergos-navbar__item-second {
     justify-content: center;
@@ -67,11 +119,18 @@ select.ergos-header__select:hover {
     flex-direction: column !important;
     height: 130px;
   }
+  .ergos-footer {
+    height: 210px;
+  }
 }
 
 @media screen and (max-width:575px) {
   .wrapper {
     margin-top: 80px;
+    text-align: justify;
+  }
+  .legend {
+    display: none;
   }
   .ergos-navbar {
     height: auto;
@@ -101,5 +160,24 @@ select.ergos-header__select:hover {
     width: 150px;
     margin: 25px auto 10px auto;
     display: block;
+  }
+
+  .ergos-footer__list {
+    order: 1;
+  }
+
+  .ergos-footer__copy {
+    order: 2;
+  }
+  .ergos-footer__info {
+    order: 3;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .thumbs {
+    display: none;
   }
 }

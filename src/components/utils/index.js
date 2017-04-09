@@ -45,7 +45,7 @@ const getHeaderOptions = ( propsOptionsList ) => {
       return (
          <li key={ index }>
            <IconComponent />
-           { item.text }
+           <span>{ item.text }</span>
          </li>
       )
     });

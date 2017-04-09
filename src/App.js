@@ -213,9 +213,9 @@ export default class App extends Component {
               </Switch>
             </Row>
           </Container>
-          <Container fluid>
+          <footer  className="bg-inverse ergos-footer container-fluid">
               <Footer data={ {footer, selectedOption} }/>
-          </Container>
+          </footer>
         </div>
     </Router>
     )
