@@ -142,6 +142,29 @@ select.ergos-header__select:hover {
   flex-grow: 2;
 }
 
+/* Contacts */
+.map-google {
+  height: 450px;
+  width: 100%;
+  margin-bottom: 20px
+}
+
+.contact-map {
+  margin: 20px 0;
+}
+
+.contact-map ul {
+  margin-top: 15px;
+}
+
+.contact-map li:first-of-type {
+  list-style: none;
+  position: relative;
+  left: -40px;
+  color: #e98d58;
+}
+
+
 @media screen and (max-width:992px) {
   .wrapper {
     margin-top: 150px;

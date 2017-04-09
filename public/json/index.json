@@ -165,11 +165,12 @@
 		"contact": {
 			"content": {
 				"cat": {
+          "title": "Formulari de Contacte",
 					"name": "Nom",
 					"telephone": "Telèfon",
 					"email": "Correu electrònic",
 					"message": "Missatge",
-					"title": "LOCALITZACIÓ",
+					"titleMap": "LOCALITZACIÓ",
 					"address": "Estem al carrer Pomaret nº 25",
 					"transport": [
 						"Com arribar-hi:",
@@ -180,11 +181,12 @@
 					"route": "Calcula la teva ruta a Google Maps"
 				},
 				"es": {
+          "title": "Formulario de Contacto",
 					"name": "Nombre",
 					"telephone": "Teléfono",
 					"email": "Correo electrónico",
 					"message": "Mensaje",
-					"title": "LOCALIZACIÓN",
+					"titleMap": "LOCALIZACIÓN",
 					"address": "Estamos en la calle Pomaret nº 25",
 					"transport": [
 						"Como llegar:",
