@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getFooterListItems } from '../utils';
 import ErgosModal from '../modal'
-import { Col, Row, Container } from 'reactstrap';
+import { Row } from 'reactstrap';
 
 export default class Footer extends Component {
   constructor( props ) {

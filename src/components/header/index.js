@@ -4,7 +4,7 @@ import ErgosNav from './ergosNav';
 import Dropdown from './dropdown';
 import { getHeaderLinks, getHeaderOptions } from '../utils/';
 import {
-  Navbar, NavbarToggler, NavbarBrand, Collapse, Col
+  Navbar, NavbarToggler, NavbarBrand, Collapse
 } from 'reactstrap';
 
 export default class Header extends Component {
@@ -42,7 +42,7 @@ export default class Header extends Component {
   }
 
   render() {
-    const { title, altImg, linksList, optionsList, isOpen } = this.state;
+    const { title, linksList, optionsList, isOpen } = this.state;
     const lang = this.state.selectedOption.value;
     return (
       <Navbar className="ergos-navbar" toggleable full fixed="top">

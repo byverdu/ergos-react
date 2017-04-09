@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../components/subComponents/loading';
 import ErgosCarousel from '../components/carousel';

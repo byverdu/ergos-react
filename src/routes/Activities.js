@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
-import { Row, Col } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../components/subComponents/loading';
 import { getActivityLinks } from '../components/utils';
