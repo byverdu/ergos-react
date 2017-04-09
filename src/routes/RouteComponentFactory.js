@@ -23,6 +23,11 @@ export function RouteComponentFactory ( pageName ) {
       });
     }
 
+    setCarouselPosition( pageName ) {
+      const mainPages = [ 'home', 'services' ];
+      return mainPages.indexOf( pageName ) >= 0;
+    }
+
     render() {
       const { content, images, pageName, legends } = this.state;
       if( !content ) {
@@ -34,10 +39,19 @@ export function RouteComponentFactory ( pageName ) {
       }
       return (
         <div>
-          <ErgosCarousel images={images} pageName={pageName} legends={legends} />
+          {
+            this.setCarouselPosition( pageName ) ?
+            <ErgosCarousel images={images} pageName={pageName} legends={legends} /> :
+            null
+          }
           <div className="ergos-content">
             { ReactHtmlParser( content )}
           </div>
+          {
+            !this.setCarouselPosition( pageName ) ?
+            <ErgosCarousel images={images} pageName={pageName} legends={legends} /> :
+            null
+          }
         </div>
       );
     }

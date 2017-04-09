@@ -132,13 +132,13 @@ select.ergos-header__select:hover {
   padding-right: 40px;
 }
 
-/* Services */
+/* Services - Activities */
 
-.services-list {
+.content-list {
   display: flex;
 }
 
-.services-list ul:first-of-type {
+.content-list ul:first-of-type {
   flex-grow: 2;
 }
 
@@ -214,13 +214,29 @@ select.ergos-header__select:hover {
     margin-bottom: 10px;
   }
 
-  .services-list {
+  .content-list {
     flex-direction: column;
     align-items: center;
   }
 
-  .services-list ul:first-of-type {
+  .content-list ul:first-of-type {
     padding: 0;
+  }
+
+  .ergos-activities ul:last-of-type {
+    margin-right: 22px;
+  }
+
+  .ergos-activities__links {
+    text-align: center;
+  }
+
+  .ergos-activities__links a:last-of-type{
+    margin-bottom: 20px;
+  }
+
+  .active-link {
+    border-bottom-color: transparent !important;
   }
 }
 
