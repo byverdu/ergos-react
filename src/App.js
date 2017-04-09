@@ -135,6 +135,7 @@ export default class App extends Component {
           </Container>
           <Container fluid className="wrapper">
             <Row>
+              <Col  className="col-lg-8 offset-lg-2 col-md-10 offset-md-1 ergos-wrapper-content">
               <Switch>
                 <Route
                   exact
@@ -211,6 +212,7 @@ export default class App extends Component {
                   )}
                 />
               </Switch>
+              </Col>
             </Row>
           </Container>
           <footer  className="bg-inverse ergos-footer container-fluid">

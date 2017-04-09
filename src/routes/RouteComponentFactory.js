@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { Row, Col } from 'reactstrap';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../components/subComponents/loading';
 import ErgosCarousel from '../components/carousel';
@@ -34,12 +33,12 @@ export function RouteComponentFactory ( pageName ) {
         );
       }
       return (
-        <Col className="col-lg-8 offset-lg-2 ergos-wrapper-content">
+        <div>
           <ErgosCarousel images={images} pageName={pageName} legends={legends} />
           <div className="ergos-content">
             { ReactHtmlParser( content )}
           </div>
-        </Col>
+        </div>
       );
     }
   }

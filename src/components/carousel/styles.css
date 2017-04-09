@@ -64,7 +64,9 @@
     background: none; }
   .carousel img {
     width: 100%;
-    display: inline-block; }
+    display: inline-block;
+    max-height: 40px;
+      object-fit: cover;}
   .carousel .carousel {
     position: relative; }
   .carousel .control-arrow {
@@ -244,5 +246,6 @@
 }
 
 .ergos-carousel .slide img{
-  max-width: 800px;
+    max-width: 800px;
+    max-height: 600px;
 }

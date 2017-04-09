@@ -1,10 +1,8 @@
+/* Global styles */
+
 html {
   position: relative;
   min-height: 100%;
-}
-
-.wrapper {
-  margin: 100px 0 180px 0;
 }
 
 body {
@@ -12,6 +10,25 @@ body {
   background-image: url("./components/media/bg.jpg");
   font-family: 'Raleway', sans-serif !important;
 }
+
+.wrapper {
+  margin: 100px 0 180px 0;
+}
+
+.ergos-content {
+  margin: 20px auto;
+}
+
+strong {
+  color: #f16529;
+}
+
+.btn-outline-primary {
+    color: white !important;
+    border-color: white !important;
+}
+
+/* header styles */
 
 .ergos-navbar a {
   border-bottom: 3px solid transparent;
@@ -68,6 +85,8 @@ select.ergos-header__select:hover {
   background: url(./components/media/burger.png) no-repeat !important;
 }
 
+/* Footer */
+
 .icon {
   fill: white;
 }
@@ -113,13 +132,14 @@ select.ergos-header__select:hover {
   padding-right: 40px;
 }
 
-strong {
-  color: #f16529;
+/* Services */
+
+.services-list {
+  display: flex;
 }
 
-.btn-outline-primary {
-    color: white !important;
-    border-color: white !important;
+.services-list ul:first-of-type {
+  flex-grow: 2;
 }
 
 @media screen and (max-width:992px) {
@@ -192,6 +212,15 @@ strong {
     order: 3;
     padding: 0;
     margin-bottom: 10px;
+  }
+
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-list ul:first-of-type {
+    padding: 0;
   }
 }
 
